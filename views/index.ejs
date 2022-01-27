@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <script src="/public/script/script.js"></script>
+    <link rel="shortcut icon" href="/public/images/logo.png">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+    <script src="http://imakewebthings.github.com/jquery-waypoints/waypoints.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha256-w49DIDk8itgSjjuoof5lTxYKwcjWJ7Z2sRW3nU1StNA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.js" integrity="sha256-lZnJXv4iTfqLpnfAHnr1A6+LUpc8wHU33pwJYJhjQ6A=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="/public/script/script.js"></script>
+    <title>BB Family</title>
+</head>
+<%- include('date') %>
+
+    <body>
+        <!-- <%- JSON.stringify(pillars) %> -->
+        <div id="parawindow" style="height: 70px;">
+            <div id="para">
+                <h3 id="Ghead">Pillers of Blazing Bane</h3>
+            </div>
+
+        </div>
+        <div class="search">
+            <input type="text" id="search" onchange="search()" placeholder="Enter Channel name">
+
+        </div>
+        <!-- linear-gradient(45deg,rgb(57, 132, 245), rgba(160, 31, 31, 0.315), rgba(131, 73, 73, 0.315), rgb(57, 132, 245)); -->
+        <div style="padding: 30px; text-align: center;min-height:100%;position: relative;width: auto;background:black ">
+            <div style="display: flex;flex: 0 1 calc(20% - 8px);flex-shrink: 0; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;">
+                <% Object.values(array).forEach(element=> {%>
+                    <% if(element.count> 100 && element.name!="Relangi mama" ){ %>
+                        <div class="opp" id="<%= element.name.toUpperCase() %>" style="background: rgb(255, 255, 255);margin:10px;background-size: cover;background-repeat: no-repeat;border-radius: 20px;">
+                            <div id="stattop" style="height: 100%;padding:10px;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
+                                <div id="stats">
+                                    <h5 style="font-weight: 500;">
+                                        <img style="border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
+                                        <span style="font-weight: 600;font-size: 0.6em;">
+                                            <%= element.name.toUpperCase()%>
+                                        </span>
+                                        <br>
+                                        <span style="font-weight: 600;font-size: 0.6em;">
+                                            <div
+                                                style="margin-top:10px;display: flex;flex-wrap: nowrap;flex-direction: row;justify-content:center;align-items: center;width: auto;gap: 5px  ;">
+                                                <lottie-player
+                                                    src="https://assets6.lottiefiles.com/packages/lf20_0jburbj5.json"
+                                                    background="transparent" speed="1"
+                                                    style="width: 30px; height: 30px;" loop autoplay></lottie-player>
+                                                <%= element.count%>
+                                            </div>
+                                            <!-- <p
+                                            style="margin-top:10px;overflow: auto;height: 18px;width:100%;text-align: center;">
+                                            <%= element.comment %>
+                                        </p> -->
+                                            <p
+                                                style="margin-top:5px;overflow: auto;height: auto;width:100%;text-align: center;">
+                                                Age:
+                                                <%= date(element.first,element.last) %> Days
+                                            </p>
+                                            <a href="<%= element.link %>">Link</a>
+                                        </span>
+                                    </h5>
+
+                                </div>
+                            </div>
+                        </div>
+                        <% } else if( element.name!="Relangi mama" ){ %>
+                            <div class="opp" id="<%= element.name.toUpperCase() %>" style="background: rgb(255, 255, 255);margin:10px;background-size: cover;background-repeat: no-repeat;border-radius: 20px;">
+                                <div id="stattop" style="height: 100%;padding:10px;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
+                                    <div id="stats">
+                                        <img style="border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
+                                        <span style="font-weight: 600; font-size: 0.6em;">
+                                            <%= element.name.toUpperCase()%>
+                                        </span>
+                                        <br>
+                                        <span style=" font-weight: 600;font-size: 0.6em;">
+                                            <div
+                                                style="margin-top:10px;display: flex;flex-wrap: nowrap;flex-direction: row;justify-content:center;align-items: center;width: auto;gap: 5px  ;">
+                                                <!-- <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ofkqaK.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;"  loop autoplay></lottie-player>  -->
+                                                <i style="color: yellow;" class="fas fa-star"></i>
+                                                <%= element.count%>
+                                            </div>
+                                            <p
+                                                style="margin-top:5px;overflow: auto;height: auto;width:100%;text-align: center;">
+                                                Age:
+                                                <%= date(element.first,element.last) %> Days
+                                            </p>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <% }%>
+                                <% }); %>
+
+            </div>
+
+        </div>
+        <footer>
+            <p>
+                with <i style="color:rgb(251, 88, 115)" class="fas fa-heart"></i> Blazing Bane
+            </p>
+        </footer>
+
+    </body>
+
+</html>
+<script>
+    function date(fisrt, last) {
+        alert(first + " and " + last)
+    }
+</script>

@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Montserrat, sans-serif;
+    background-color: black;
+}
+
+#parawindow {
+    height: 110px;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.609), rgba(0, 0, 0, 0.568)), url('https://i.redd.it/f9qwtceyhyr41.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#para {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Ghead {
+    color: white;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.3em;
+}
+
+.opp {
+    overflow: hidden;
+    display: flex;
+    background: rgba(255, 255, 0, 0.52);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    /* height: 170px;
+    width: 150px; */
+    margin: 0 auto;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    transition: all 0.6s;
+}
+
+#stats {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.opp:hover {
+    transform: scale(1.1);
+    transition: all 0.4s;
+}
+
+.opp:hover #stats {
+    opacity: 100;
+    transition: all 0.6s;
+}
+
+.opp:hover #stattop {
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.808));
+}
+
+#oimg {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.opp:hover #oimg {
+    height: 50%;
+    width: 50%;
+    transition: all 0.6s;
+}
+
+
+/* footer */
+
+footer {
+    box-sizing: border-box;
+    /* position: fixed; */
+    width: 100%;
+    /* bottom: 0; */
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+    background-color: black;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 10px;
+}
+
+footer p {
+    align-items: centerz
+}
+
+
+/* search */
+
+.search {
+    top: -10px;
+    width: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 0px 0px 0px 10px 10px black;
+}
+
+input {
+    border: none;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
