@@ -178,8 +178,6 @@ footer p {
 /* search */
 
 .search {
-    top: -10px;
-    width: auto;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -190,13 +188,29 @@ footer p {
 }
 
 input {
+    border: white 1px solid;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    background-image: url(/public/images/search.png);
+    background-position: 10px 7px;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
     border-radius: 20px;
-    border: none;
-    width: fit-content !important;
+    width: 40px;
+    /* border: none; */
+    /* width: fit-content !important; */
 }
 
 input::placeholder {
     text-align: center;
+}
+
+input:focus {
+    width: 200px !important;
+    transition: all 0.4s;
+    text-align: center;
+    border: none;
 }
 
 a {
