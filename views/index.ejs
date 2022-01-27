@@ -71,26 +71,36 @@
                                     <div class="stattop" style="height: 100%;padding:10px;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
                                         <div id="stats">
                                             <h5 style="font-weight: 500;">
-                                                <img style="border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
+                                                <img style="margin-top:10px;border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
                                                 <span style="font-weight: 600;font-size: 0.7em;">
-                                            <%= element.name.toUpperCase()%>
-                                        </span>
+                                                    <%= element.name.toUpperCase()%>
+                                                </span>
                                                 <br>
                                                 <span style="font-weight: 600;font-size: 0.7em;">
-                                            <div
-                                                style="margin-top:10px;display: flex;flex-wrap: nowrap;flex-direction: row;justify-content:center;align-items: center;width: auto;gap: 5px  ;">
-                                                <lottie-player
-                                                    src="https://assets6.lottiefiles.com/packages/lf20_0jburbj5.json"
-                                                    background="transparent" speed="1"
-                                                    style="width: 30px; height: 30px;" loop autoplay></lottie-player>
-                                                <%= element.count%>
-                                            </div>
-                                            <p
-                                                style="margin-top:2px;overflow: auto;text-align: center;font-size: x-small;">
-                                                <%= element.comment %>
-                                            </p>
-                                            <a href="<%= element.link %>"> <i style="font-size: 20px;" class="fab fa-youtube"></i> </a>
-                                        </span>
+                                                    <div
+                                                        style="display: flex;flex-wrap: nowrap;flex-direction: row;justify-content:center;align-items: center;width: auto;gap: 5px  ;">
+                                                        <lottie-player
+                                                            src="https://assets6.lottiefiles.com/packages/lf20_0jburbj5.json"
+                                                            background="transparent" speed="1"
+                                                            style="width: 30px; height: 30px;" loop autoplay>
+                                                        </lottie-player>
+                                                        <%= element.count%>
+                                                    </div>
+                                                    <%= element.comment %> <br>
+                                                    <!-- <p
+                                                        style="text-align: center;font-size: small;">
+                                                        
+                                                    </p> -->
+                                                    Age:
+                                                    <%= date(element.first,element.last) %> Days <br>
+                                                    <!-- <p
+                                                        style="text-align: center;font-size: small;">
+                                                        Age:
+                                                        <%= date(element.first,element.last) %> Days
+                                                    </p> -->
+                                                    <a href="<%= element.link %>"> <i style="font-size: 20px;"
+                                                            class="fab fa-youtube"></i> </a>
+                                                </span>
                                             </h5>
 
                                         </div>
