@@ -9,8 +9,82 @@
 html {
     scroll-behavior: smooth;
     font-family: Montserrat, sans-serif;
-    background-color: black;
 }
+
+body {
+    background-color: black !important;
+}
+
+
+/* navi */
+
+#navi {
+    color: white;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(166deg, #22477e, #1d201f, #f05b6e);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+    transition: all 0.3s;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+#small {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-evenly;
+    transition: all 1s;
+}
+
+#small a {
+    background-color: transparent;
+    border: none;
+}
+
+#small i {
+    color: white;
+}
+
+#ncon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto;
+}
+
+@media only screen and (max-device-width: 768px) {
+    #ncon {
+        position: relative;
+        top: 50%;
+        transform: translateY(-60%);
+        height: auto;
+    }
+}
+
+#ntext {
+    font-size: larger;
+    margin-top: -1%;
+    margin-bottom: 50px;
+}
+
+
+/* body */
 
 #parawindow {
     height: 110px;
@@ -40,7 +114,6 @@ html {
 .opp {
     overflow: hidden;
     display: flex;
-    background: rgba(255, 255, 0, 0.52);
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     /* height: 170px;
     width: 150px; */
@@ -58,19 +131,13 @@ html {
 }
 
 .opp:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: all 0.4s;
 }
 
-.opp:hover #stats {
-    opacity: 100;
-    transition: all 0.6s;
-}
-
-.opp:hover #stattop {
-    color: white;
+.opp:hover .stattop {
+    color: rgb(0, 0, 0);
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.808));
 }
 
 #oimg {
@@ -112,19 +179,20 @@ footer p {
 
 .search {
     top: -10px;
-    width: 200px;
+    width: auto;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     padding: 5px;
     border-radius: 20px;
     text-align: center;
-    background-color: white;
     box-shadow: 0px 0px 0px 0px 10px 10px black;
 }
 
 input {
+    border-radius: 20px;
     border: none;
+    width: fit-content !important;
 }
 
 input::placeholder {
@@ -133,4 +201,54 @@ input::placeholder {
 
 a {
     text-decoration: none;
+    color: red;
+}
+
+i {
+    color: red;
+}
+
+.gradient-box {
+    margin: 10px;
+    padding: 5px;
+    --borderWidth: 20px;
+    position: relative;
+    border-radius: var(--borderWidth);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+.main {
+    height: 180px;
+    border-radius: 20px;
+    position: relative;
+    background-color: white;
+}
+
+
+/* .gradient-box:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+} */
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
