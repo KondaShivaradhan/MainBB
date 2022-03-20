@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC</title>
+    <link rel="icon" href="https://icons-for-free.com/iconfiles/png/512/desktop+monitor+pc+screen+web+icon-1320168141814699293.png">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="/public/css/pc.css">
+    <link rel="stylesheet" href="/public/css/head.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.js" integrity="sha256-lZnJXv4iTfqLpnfAHnr1A6+LUpc8wHU33pwJYJhjQ6A=" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/4afcb75146.js"></script>
+    <!-- parallaxjs -->
+    <script src="/public/script/parallax.js"></script>
+
+</head>
+
+<body>
+    <style>
+        #small a {
+            background-color: transparent;
+            border: none;
+        }
+        
+        #small i {
+            color: white;
+        }
+        
+        #ncon {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            height: auto;
+        }
+        
+        @media only screen and (max-device-width: 768px) {
+            #ncon {
+                position: relative;
+                top: 50%;
+                transform: translateY(-60%);
+                height: auto;
+            }
+        }
+        
+        #ntext {
+            font-size: larger;
+            margin-top: -1%;
+            margin-bottom: 50px;
+        }
+        
+        #navi {
+            color: white;
+            text-align: center;
+            height: 50px;
+            width: 100%;
+            position: relative;
+            background: linear-gradient(166deg, #22477e, #1d201f, #f05b6e);
+            background-size: 600% 600%;
+            -webkit-animation: AnimationName 5s ease infinite;
+            -moz-animation: AnimationName 5s ease infinite;
+            animation: AnimationName 5s ease infinite;
+            transition: all 0.3s;
+        }
+        
+        @-webkit-keyframes AnimationName {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+        
+        #small {
+            display: flex;
+            position: relative;
+            width: 100%;
+            justify-content: space-evenly;
+            transition: all 1s;
+        }
+    </style>
+    <div id="navi">
+        <div id="ncon">
+            <div id="small" class="container">
+                <a name="" id="edoti" class="btn btn-primary" href="http://kondashivaradhan.github.io/gamesite" role="button"> <img src="/public/images/logo.svg" style="height: 20px;width: 20px;" alt="BB"></a>
+                <a name="" id="edoti" class="btn btn-primary" href="https://discord.gg/U5jDNUPceM" role="button" title="Discord"> <i class="fab fa-discord">
+                    </i></a>
+                <a name="" id="edoti" class="btn btn-primary" href="https://www.instagram.com/blazing_bane/" role="button"> <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="https://images.pexels.com/photos/8599390/pexels-photo-8599390.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">
+        <div style=" backdrop-filter: blur(0px);background: linear-gradient(140deg,rgba(0, 0, 0, 0.466),rgba(0, 0, 0, 0.472),black);top: 50%;position: relative;height: 100%;
+            left: 50%;
+            color: white;
+            transform: translate(-50%, -50%);">
+            <div id="heading" style="text-align:right;font-family: 'Poppins', sans-serif;">
+                <span style="font-size: 30px;">IT'S ALL FOR</span> <br><span style="font-size: 80px;">Gaming</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="display: flex;flex-wrap: wrap;margin: 0 auto;" class="container">
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/capture.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/3oHJ1oZ">
+                                <h3>USB 2.0 Capture Card</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/Gorrilla.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/3rMnOMn">
+                                <h3>Tygot Gorilla Tripod</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/redgear.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/303RR6I">
+                                <h3>Redgear A-17 Gaming</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/lappy.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/3iKfasA">
+                                <h3>Asus VivoBook Ultra 14</h3>
+                                <h5>Ryzen 7 4700U</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="https://in.canon/media/image/2020/10/12/ce5285aeefb24966b324099157013dc2_M50MII_Black_FrontSlantLeft_M15-45-.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/3GoHWZ8">
+                                <h3> 📷 Canon M50 Mark 2</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/phone.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <h3> 📱 Oneplus 7 pro 8GB</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cpu" class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img style="margin: 25px;" src="/public/images/cpu.png" height="250px" width="250px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <h3>Intel i7 - 8700k</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobo" class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/mobo.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <h3>Gigabyte Z370 Gaming WIFI</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gpu" class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/gpu.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <h3>Nvidia GTX-1070</h3>
+                            <h5>Gigabyte Windforce 2.0</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="moni" class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/monitor.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/3iJFhQ3">
+                                <h3>Acer Predator XB1</h3>
+                                <h5>Predator XB271HU</h5>
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/g102.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/3oz73Cf">
+                                <h3>🖱 Logitech G102 LightSync</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/key.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/3IvqoMJ">
+                                <h3>⌨ Ant Esports MK1200 Mechanical</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/case.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <h3>AORUS AC300W</h3>
+                            <h5>ATX Mid-tower PC Case</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/psu.webp" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <h3>Cooler Master 650Watt</h3>
+                            <h5>CX 650W</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/ram.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <h3>Corsair Vengence</h3>
+                            <h5>8GB + 8GB + 16GB</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/cpufan.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <h3>Cooler Master</h3>
+                            <h5>HYPER H410R</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/head.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/303M5Sy">
+                                <h3>🎧 Redgear ThunderB 7.1 </h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/pibox.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+                            <a href="https://amzn.to/3ozspzF">
+                                <h3> Pibox USB to HDMI adaptor</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div id="objects">
+                    <div>
+                        <img src="/public/images/seagate.png" height="300px" width="300px" style="margin: 0 auto;" alt="">
+                    </div>
+                    <div id="test">
+                        <div class="center">
+
+                            <a href="https://amzn.to/3IsRnZl">
+                                <h3>🗃 Seagate 4TB External Storage</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+<footer>
+    <div style="display: flex;
+    width: 170px;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: nowrap;margin: 0 auto;">
+        With
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_jhEt7A.json" background="transparent" speed="1" style="width: 20px; height: 20px;" loop autoplay></lottie-player>
+        <a href="http://kondashivaradhan.github.io/gamesite">Blazing Bane</a>
+    </div>
+</footer>
+
+</html>

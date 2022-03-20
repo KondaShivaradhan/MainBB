@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-const https = require('https');
+var path = require('path');
 var mongo = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 
@@ -12,40 +12,30 @@ MongoClient.connect(url, {
     if (err) throw err;
     db.close();
 });
-var path = require('path');
-app.use("/public", express.static(path.join(__dirname, "/public")));
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: false }));
+app.use("/public", express.static(path.join(__dirname, "/public")));
+app.get('/', function(req, res) {
+    res.render("index")
+        // res.sendFile(path.join(__dirname, 'views/index.html'));
+})
+app.get('/pc.html', function(req, res) {
+    // res.render("index")
+    res.sendFile(path.join(__dirname, 'views/pc.html'));
+})
 var pillars = ["JayanthRaj Vipergaming War-hulk War-lord Sritan Ravan-gaming Asura-Vajresh Seven-yeshwanth Imvjgamer Rexop Baresspanda Ramp-sd Dunde-ganesh Shivanand-yadav Serious-gaming Suresh-reddy Mahesh-yadav Bewakoof-edits JSC-gaming Balagoni-gamer Arun-perem Ak-47 Sai-Krishna Pavan-gandham My3-ravi Siva-chaitanya Vinod-mourya Speedy-s9 Prabhath-verma Sunil-p Charan-cherry Harsha-reddy Sg-king Affective-gaming Imspeed Ghost-gamer Overpro-Yt Gamerd Unitedwestand Lightz Bullymaguire Chotku Gamer111 Max-master Cdking Manigamingtelugu Cyclonous Crazy Asura-rekrax Aditya-verma Abhishek monstol elcin kavin-walton ryft-yt wyatt"]
 
-app.get('/', function(req, res) {
+app.get('/pillers', function(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("youtube");
         dbo.collection("live").find({}).sort("count", -1).toArray(function(err, result) {
             if (err) throw err;
             array = result
-            res.render('index.ejs', { array, pillars })
+            res.render('pillers.ejs', { array, pillars })
             db.close();
         });
     });
 });
-// app.get('/:id', function(req, res) {
-//     var id = req.params.id
-//     console.log(id);
-//     let result = id.slice(1);
-//     MongoClient.connect(url, function(err, db) {
-//         if (err) throw err;
-//         var dbo = db.db("youtube");
-//         dbo.collection("experi").find({ "link": id }).sort("count", -1).toArray(function(err, result) {
-//             if (err) throw err;
-//             array = result
-//             res.render('index.ejs', { array, pillars })
-//             db.close();
-//         });
-//     });
-// });
-
-app.listen(process.env.PORT || 7000)
+app.listen(process.env.PORT || 5000)
 console.log('====================================');
-console.log('sever started');
+console.log('sever started at 5000');

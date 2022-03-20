@@ -1,0 +1,421 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #182228;
+    transform-origin: top right;
+    transform: skewY(4deg);
+}
+
+.row div {
+    padding-top: 30px;
+}
+
+#face {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url(/public/images/face.jpg);
+}
+
+#game {
+    width: 100vw;
+    height: calc(100vw/1.77);
+    object-fit: cover;
+    left: 0px;
+    margin: 0px;
+    position: fixed;
+    top: 0px;
+    z-index: -999;
+}
+
+footer {
+    padding: 5px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    font: 1em sans-serif;
+}
+
+#fps2 {
+    color: aqua;
+}
+
+#fps {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #edf05b;
+}
+
+#game2 {
+    width: 100vw;
+    height: calc(100vw/1.77);
+    object-fit: cover;
+    left: 0px;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+    z-index: -900;
+}
+
+#banner2 {
+    width: 100%;
+    height: 100%;
+    background: #182228;
+    transform-origin: bottom right;
+    transform: skew(0deg, -4deg);
+}
+
+#banner3 iframe {
+    transform: skew(0deg, 4deg);
+}
+
+#banner3 {
+    width: 100%;
+    height: 100%;
+    background: #182228;
+    transform-origin: bottom right;
+    transform: skew(0deg, -4deg);
+}
+
+#wel {
+    background: grey;
+    height: 80%;
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+
+#navi {
+    color: white;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    padding: 20px;
+    z-index: 1000;
+    background: linear-gradient(166deg, #22477e, #1d201f, #f05b6e);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+#edoti {
+    background: transparent;
+    border: transparent 0px;
+    font-size: 20px;
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+#small {
+    position: relative;
+    width: auto;
+    display: none;
+    justify-content: space-evenly;
+    transition: all 1s;
+}
+
+#ntext {
+    font-size: larger;
+    margin-top: -1%;
+    margin-bottom: 50px;
+}
+
+#flex {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#bblogo {
+    height: 50px;
+    width: 50px;
+}
+
+#discord {
+    box-shadow: #5e5f5f 0px 0px 20px;
+}
+
+#flex>div {
+    margin: 10px auto;
+    color: black;
+    box-sizing: content-box;
+    box-shadow: #5e5f5f 0px 0px 20px;
+    width: 400px;
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+p {
+    padding: 5px;
+}
+
+#svg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 50%;
+    width: 50%;
+    /* animation: shrink 1s infinite alternate ease-in-out; */
+}
+
+#ncon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto;
+}
+
+a:hover {
+    transform: scale(1.17);
+    transition: trasform 0.5s;
+    color: white;
+}
+
+#rot {
+    transform: rotate(270deg);
+}
+
+
+/* scroll animation */
+
+#scrolld {
+    position: fixed;
+    bottom: 50px;
+    animation: updown 0.5s alternate infinite ease-in-out;
+}
+
+#bb {
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    /* height: 60vh; */
+}
+
+#firebb {
+    margin-top: 120px;
+    width: 400px;
+}
+
+section {
+    color: white;
+    background: black;
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.about {
+    background: linear-gradient(rgba(0, 0, 0, 0.871), rgba(0, 0, 0, 0.644)), url(https://cached.imagescaler.hbpl.co.uk/resize/scaleHeight/815/cached.offlinehbpl.hbpl.co.uk/news/SUC/wppgame-20190806071758489.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+}
+
+.photo>div {
+    top: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.photo {
+    background: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.644)), url(https://wallpaperaccess.com/full/5708260.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 56vh;
+}
+
+.about>div {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    padding: 10px 21px;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    z-index: 1000;
+}
+
+.button:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.4);
+    color: rgb(0, 0, 0);
+    transform: translateY(-7px);
+}
+
+button:focus {
+    outline: 0;
+}
+
+#click {
+    display: none;
+}
+
+@media only screen and (max-device-width: 768px) {
+    #svg {
+        transform: scale(2);
+    }
+    #ncon {
+        position: relative;
+        top: 50%;
+        transform: translateY(-60%);
+        height: auto;
+    }
+    #firebb {
+        width: 200px;
+    }
+}
+
+@keyframes spining {
+    from {
+        transform: rotate((0deg));
+    }
+    to {
+        transform: rotate(360deg)
+    }
+    ;
+}
+
+#spin {
+    animation: spining 1s ease-in-out infinite;
+}
+
+
+/* button */
+
+#but,
+#but::after {
+    width: 120px;
+    height: 56px;
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+    background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 58px;
+    box-shadow: 6px 0px 0px #00E6F6;
+    outline: transparent;
+    position: relative;
+}
+
+#but::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+    content: 'Pexels.com';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+}
+
+#but:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+    }
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+    }
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+    }
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+    }
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
