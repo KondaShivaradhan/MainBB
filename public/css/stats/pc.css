@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#load {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: black;
+    z-index: 10000;
+    transition: all 0.7s;
+}
+
+#bb {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.card {
+    margin: 10px auto;
+    width: 400px;
+}
+
+#heading {
+    width: 70%;
+    font-family: "Ping 2", sans-serif;
+    font-weight: 800;
+    padding: 20px;
+    position: relative;
+    line-height: 60px;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 600px) {
+    #heading {
+        width: auto;
+    }
+}
+
+.parallax-window {
+    height: 60vh;
+    background: rgba(31, 1, 31, 0);
+    /* background: rgb(51, 0, 51); */
+}
+
+#test {
+    padding: 10px;
+    position: relative;
+    width: auto;
+    text-align: center;
+    float: right;
+    flex: 1;
+    gap: 1%;
+}
+
+h3 {
+    letter-spacing: 1px;
+}
+
+#objects {
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

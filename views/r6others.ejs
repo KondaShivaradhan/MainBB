@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= username %>
+    </title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="icon" href="https://img1.cgtrader.com/items/2018582/0dd527fc09/3d-printed-rainbow-six-siege-operator-icons-3d-model-stl.jpg">
+
+    <link rel="stylesheet" href="/public/css/stats/r6.css">
+    <link rel="stylesheet" href="/public/css/stats/head.css">
+    <link rel="preload" href="https://www.teahub.io/photos/full/12-124675_rainbow-six-siege.jpg" as="image">
+    <link rel="preload" href="https://www.wallpapertip.com/wmimgs/30-304388_rainbow-six-siege.jpg" as="image">
+    <link rel="preload" href="https://i.pinimg.com/originals/18/75/19/187519a4719ca8baead7eba222787ef1.jpg" as="image">
+    <link rel="preload" href="https://wallpapercave.com/wp/wp4013111.png" as="image">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- parallax-window -->
+    <script src="/public/script/parallax.js"></script>
+    <!-- font awesome -->
+    <script src="https://use.fontawesome.com/4afcb75146.js"></script>
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+<script>
+    var i = 0;
+    var j = 0;
+
+    function start() {
+        String.prototype.capitalize = function() {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        }
+        let test = '<%- JSON.stringify(obj) %>'
+        var obj = JSON.parse(test)
+        var h2text = [""]
+        Object.keys(obj).forEach(element => {
+            var res = element.replace("_", " ");
+            if (res == "playtime") {
+                obj[element] = (obj[element] / 86400).toFixed(2) + 'D'
+            }
+            if (res == "distance travelled") {
+                obj[element] = (obj[element] / 3281).toFixed(2) + 'KM'
+            }
+            var cap = res.capitalize()
+
+            h2text.push("<b>" + cap + "</b><br><span id='banner'>" + obj[element] + "</span>");
+        });
+        if (i >= (h2text.length - 1)) {
+            i = 0
+        }
+        if (j >= 3) {
+            j = 0
+        }
+        var back = document.getElementById('back')
+        var h2 = document.getElementById("eddi");
+        h2.style.transition = "0.5s"; //fade speed
+        var images = ['', 'https://www.teahub.io/photos/full/12-124675_rainbow-six-siege.jpg', 'https://www.wallpapertip.com/wmimgs/30-304388_rainbow-six-siege.jpg', 'https://i.pinimg.com/originals/18/75/19/187519a4719ca8baead7eba222787ef1.jpg', 'https://www.wallpapertip.com/wmimgs/30-304388_rainbow-six-siege.jpg']
+        setTimeout(function() {
+            h2.style.opacity = 0;
+            setTimeout(function() {
+                back.style.background = "URL(" + images[j] + ")"
+                back.style.backgroundSize = "cover"
+                back.style.backgroundPosition = "50% 30%"
+                back.style.animationName = "back"
+                h2.innerHTML = h2text[i];
+                h2.style.opacity = 1;
+            }, 500);
+        }, 1000)
+        i++
+        j++;
+    }
+
+    function loaded() {
+
+        setInterval(() => {
+            // start()
+        }, 5000);
+    }
+    $(document).ready(function() {
+        var audio = document.getElementById("music");
+        audio.volume = 0.04;
+    });
+
+    function audio() {
+        var audio = document.getElementById('music')
+        var acon = document.getElementById('audiocon')
+        if (audio.paused) {
+            console.log('paused');
+            audio.play();
+            acon.className = "fa fa-volume-up";
+        } else {
+            console.log('playing');
+            audio.pause();
+            acon.className = "fa fa-volume-off";
+        }
+    }
+</script>
+
+<body onload="loaded()">
+
+    <%- include('header'); -%>
+        <audio id="music" loop src="/public/music/r6.mp3"></audio>
+
+        <div id="audio" onclick="audio()">
+            <i id="audiocon" class="fa fa-volume-off" aria-hidden="true"></i>
+        </div>
+        <div id="R6C">
+            <div class="row" id="back" style="text-align: center;">
+                <div id="shade" class="col-md-12" style="height: 60vh;">
+                    <div style="position: relative;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+                        <div id="eddi" style="font-size: 28px;width: auto;margin: 0 auto;background-color:rgba(80, 18, 18, 0);">
+                            Rainbow 6 Siege
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="parawindow">
+                <div id="para">
+                    <h3 id="Ghead">
+                        <%= username %>
+                    </h3>
+                </div>
+            </div>
+            <div class="con">
+                <div style="text-align: center;margin-top: 2%;">
+
+                    <div style="display: inline-block;">
+
+                        <table>
+
+                            <tr style=" font-family: 'Roboto', sans-serif;">
+                                <td> <span style="font-size: 15px;font-weight: 900;letter-spacing: 2px;">Level</span>
+                                </td>
+                                <td><span style="font-size: 15px;font-weight: 900;letter-spacing: 2px;">Kills</span>
+                                </td>
+                                <td> <span style="font-size: 15px;font-weight: 900;letter-spacing: 2px;">W/L</span>
+
+                                </td>
+                                <td>
+                                    </span><span style="font-size: 15px;font-weight: 900;letter-spacing: 2px;">
+                                        K/D</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-size: 20px;color: rgb(255, 255, 255);">
+LEVEL
+                                    </span>
+                                </td>
+                                <td>
+                                    <span style="font-size:  20px;color: white;">
+                                        <%= stats.pvp.general.kills%>
+                                    </span>
+                                </td>
+                                <td><span style="font-size:  20px;color: white;">
+                                        <%= stats.pvp.general. winRate%>
+                                </td>
+                                <td> <span style="font-size:  20px;color: white;">
+                                        <%= stats.pvp.general.kd%>
+                                    </span></td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                </div>
+                <br>
+
+                <!-- ranked -->
+                <div id="ranked" class="container" style="text-align: center;">
+                    <table style="overflow: hidden;width: auto;background-color: rgba(76, 95, 98, 0.404);margin: 0 auto;border-radius: 12px;">
+                        <tr>
+                            <th colspan="2"> <span style="font-size: 20px;letter-spacing: 1px;">
+                                    <%= ra.boards.pvp_ranked.current.name%>
+                                </span></th>
+                        </tr>
+                        <tr style="border-bottom: none;">
+                            <td rowspan="6" style="border-right: white solid 1px;"><img d src="<%= ra.boards.pvp_ranked.current.image%>" alt="Silver 1" style="width: 120px;"></td>
+                        </tr>
+
+                        <tr>
+                            <td>MMR - <span>
+                                    <%= ra.boards.pvp_ranked.current.mmr%>
+                                </span></td>
+
+                        </tr>
+                        <tr>
+                            <td>Kills - <span>
+                                    <%= ra.boards.pvp_ranked.kills%>
+                                </span></td>
+
+                        </tr>
+                        <tr>
+                            <td>Death - <span>
+                                    <%= ra.boards.pvp_ranked.deaths%>
+                                </span></td>
+
+                        </tr>
+                        <tr>
+                            <td>Wins - <span>
+                                    <%= ra.boards.pvp_ranked.wins%>
+                                </span></td>
+
+                        </tr>
+                        <tr style="border: none;">
+                            <td>Loss - <span>
+                                    <%= ra.boards.pvp_ranked.losses%>
+                                </span></td>
+                        </tr>
+
+                    </table>
+                </div>
+                <br>
+                <!-- top operators -->
+                <div id="parawindow">
+                    <div id="para">
+                        <h3 id="Ghead">
+                            Most Played
+                        </h3>
+                    </div>
+                </div>
+                <div class="row" id="topOp">
+                    <div class="col-md-6" id="attackB">
+                        <!-- Object.values(indu).forEach(element => {
+                if (dmax < element.kills && element.role == 'defender') {
+                    dmax = element.kills
+                }
+            }) -->
+                        <% Object.values(indu).forEach(element=> {%>
+                            <% if(element.kills==amax) { var maxd=element %>
+                                <div>
+                                    <span style="font-weight: 600;color: rgb(127, 255, 255);letter-spacing: 1px;">
+                                        <%= element.name%>
+                                    </span>
+                                    <img src="<%= element.icon%>" height="200px" width="200px" alt="">
+                                    <p class="price">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <%= element.kills%> <span style="color:rgb(223, 169, 10);font-weight: 600;">Kills</span><br>
+                                                    <%= parseFloat(element.kd).toFixed(2) %> <span style="color:rgb(223, 169, 10);font-weight: 600;">KD</span><br>
+
+                                                        <%= parseFloat(element.wins/element.losses).toFixed(2) %> <span style="color:rgb(223, 169, 10);font-weight: 600;">WL</span><br>
+                                                            <%= element.headshots %> <span style="color:rgb(223, 169, 10);font-weight: 600;">Kills</span><br>
+
+                                                                <%= Math.round(element.playtime/3600) %> <span style="color:rgb(223, 169, 10);font-weight: 600;">Hours</span>
+                                            </div>
+
+                                            <div class="col-md-6">
+
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                                <% } %>
+                                    <% }); %>
+                    </div>
+                    <div class="col-md-6" id="defendB">
+                        <% Object.values(indu).forEach(element=> {%>
+                            <% if(element.kills==dmax) { var maxd=element %>
+
+                                <div>
+                                    <span style="font-weight: 600;color: rgb(127, 255, 255);letter-spacing: 1px;">
+                                        <%= element.name%>
+                                    </span>
+                                    <img src="<%= element.icon%>" height="200px" width="200px" alt="">
+                                    <p class="price">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <%= element.kills%> <span style="color:rgb(223, 169, 10);font-weight: 600;">Kills</span><br>
+                                                    <%= parseFloat(element.kd).toFixed(2) %> <span style="color:rgb(223, 169, 10);font-weight: 600;">KD</span><br>
+
+                                                        <%= parseFloat(element.wins/element.losses).toFixed(2) %> <span style="color:rgb(223, 169, 10);font-weight: 600;">WL</span><br>
+                                                            <%= element.headshots %> <span style="color:rgb(223, 169, 10);font-weight: 600;">Kills</span><br>
+
+                                                                <%= Math.round(element.playtime/3600) %> <span style="color:rgb(223, 169, 10);font-weight: 600;">Hours</span>
+                                            </div>
+                                            <br>
+
+                                            <div class="col-md-6">
+
+                                            </div>
+                                        </div>
+
+                                    </p>
+                                </div>
+
+                                <% } %>
+                                    <% }); %>
+                    </div>
+                </div>
+
+                <!-- Attacking Operators -->
+                <div id="parawindow" style="height: 70px;">
+                    <div id="para">
+                        <h3 id="Ghead">Attackers </h3>
+                    </div>
+                </div>
+                <div style="padding: 30px; text-align: center;height:70%;position: relative;width: 100%;background: linear-gradient(45deg,rgb(57, 132, 245), rgba(0, 0, 0, 0.315), rgba(0, 0, 0, 0.315), rgb(57, 132, 245));">
+                    <div style="display: flex; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;gap: 1%;">
+                        <% Object.values(indu).forEach(element=> {%>
+                            <% if(!element.name.includes('Recruit') && !element.role.includes('defender')) {%>
+                                <div id="opp" style="background: url('<%= element.icon%>');background-size: cover;background-repeat: no-repeat;border-radius: 20px;">
+                                    <div id="stattop" style="height: 100%;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
+                                        <div id="stats">
+                                            <h5 style="font-weight: 500;">
+                                                <span style="font-weight: 600;color: rgb(127, 255, 255);">
+                                                    <%= element.name%>
+                                                </span>
+                                            </h5>
+                                            <p class="price">
+                                                <%= element.kills%> <span style="color:rgb(223, 169, 10);font-weight: 600;">Kills</span><br>
+
+                                                    <%= element.kd%> <span style="color:rgb(223, 169, 10);font-weight: 600;">KD</span><br>
+                                                        <%= parseFloat(element.wins/element.losses).toFixed(2)%> <span style="color:rgb(223, 169, 10);font-weight: 600;">WL</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <% } %>
+
+                                    <% }); %>
+                    </div>
+                </div>
+                <!-- Defending Operators -->
+                <div id="parawindow" style="height: 70px;">
+                    <div id="para">
+                        <h3 id="Ghead">Defenders</h3>
+                    </div>
+                </div>
+                <div style="padding: 30px;text-align: center; height:70%;position: relative;width: 100%;background: linear-gradient(135deg,rgb(240, 177, 60),rgb(0, 0, 0),rgb(0, 0, 0),rgb(240, 177, 60));">
+                    <div style="display: flex; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;gap: 1%;">
+                        <% Object.values(indu).forEach(element=> {%>
+                            <% if( !element.name.includes('Recruit') && !element.role.includes('attacker')) {%>
+                                <div id="opp" style="background: url('<%= element.icon%>');background-size: cover;background-repeat: no-repeat;border-radius: 20px;">
+                                    <div id="stattop" style="height: 100%;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
+                                        <div id="stats">
+                                            <h5 style="font-weight: 500;">
+                                                <span style="font-weight: 600;color: rgb(127, 255, 255);">
+                                                    <%= element.name%>
+                                                </span>
+                                            </h5>
+                                            <p class="price">
+                                                <%= element.kills%> <span style="color:rgb(223, 169, 10);font-weight: 600;">Kills</span><br>
+                                                    <%= element.kd%> <span style="color:rgb(223, 169, 10);font-weight: 600;">KD</span><br>
+                                                        <%= parseFloat(element.wins/element.losses).toFixed(2)%> <span style="color:rgb(223, 169, 10);font-weight: 600;">WL</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <% }); %>
+                    </div>
+                </div>
+            </div>
+            <div id="parawindow">
+                <div id="para">
+
+                    <div id="Ghead2">
+                        <input type="text" id="qta_field" placeholder="BlazingBane" value="BlazingBane">
+                        <a id="r6a" href='' onclick="this.href='/r6/'+document.getElementById('qta_field').value">
+                            <button type="button" name="" id="" class="btn btn-dark">Search <i class="fa fa-search"
+                                    aria-hidden="true"></i> </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+<%- include('footer') -%>
+
+</html>

@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+#Ghead2 {
+    width: auto;
+    color: white;
+    text-align: center;
+}
+
+#load {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: black;
+    z-index: 10000;
+    transition: all 0.7s;
+}
+
+#bb {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#vback {
+    position: relative;
+    object-fit: cover;
+}
+
+#card {
+    background: rgb(0, 0, 0);
+}
+
+#load {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: black;
+    z-index: 10000;
+    transition: all 0.7s;
+}
+
+#bb {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#audio {
+    animation: buttonA 1s infinite alternate ease;
+    position: fixed;
+    z-index: 1000;
+    border-radius: 50%;
+    border: 2px white solid;
+    height: 40px;
+    width: 40px;
+    right: 50px;
+    bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+@keyframes buttonA {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+#audiocon {
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+}
+
+@keyframes name {
+    from {
+        letter-spacing: 1rem;
+    }
+    to {
+        letter-spacing: 1.3rem;
+    }
+}
+
+#ranked tr {
+    border-bottom: white 1px solid;
+}
+
+td {
+    padding: 5px;
+}
+
+#parawindow {
+    height: 110px;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.609), rgba(0, 0, 0, 0.568)), url('https://i.redd.it/f9qwtceyhyr41.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#para {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Ghead {
+    color: white;
+    text-align: center;
+    letter-spacing: 0.5rem;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.3em;
+}
+
+td {
+    width: 160px !important;
+}
+
+.con {
+    position: relative;
+    z-index: 11;
+    height: auto;
+    border-radius: 10px;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#opp {
+    overflow: scroll;
+    display: flex;
+    background: rgba(255, 255, 0, 0.52);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    height: 120px;
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: arial;
+    transition: all 0.6s;
+}
+
+#stats {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+#opp:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+}
+
+#opp:hover #stats {
+    opacity: 100;
+    transition: all 0.6s;
+}
+
+#opp:hover #stattop {
+    background: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.808));
+    transition: all 0.4s;
+}
+
+.price {
+    font-size: 15px;
+}
+
+#oimg {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+}
+
+#opp:hover #oimg {
+    height: 50%;
+    width: 50%;
+    transition: all 0.6s;
+}
+
+#R6C {
+    overflow: hidden;
+    color: white;
+    position: relative;
+}
+
+@keyframes back {
+    from {
+        background-position: 45% 40%;
+    }
+    to {
+        background-position: 65% 55%;
+    }
+}
+
+@keyframes backr6 {
+    from {
+        background-position-y: 60%;
+    }
+    to {
+        background-position-y: 65%;
+    }
+}
+
+@keyframes spacing {
+    from {
+        letter-spacing: 0.2rem;
+    }
+    to {
+        letter-spacing: 0.8rem;
+    }
+}
+
+#banner {
+    text-align: center;
+    letter-spacing: 0.2rem;
+    font-size: 40px;
+    animation-fill-mode: forwards;
+}
+
+#back {
+    background: linear-gradient(rgba(0, 0, 0, 0.466), rgba(0, 0, 0, 0.5)), url('/public/images/sledge.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.8s;
+}
+
+#eddi {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+#shade {
+    animation: back 1s alternate infinite;
+    background: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.589));
+}
+
+#topOp {
+    background-color: black;
+    text-align: center;
+}
