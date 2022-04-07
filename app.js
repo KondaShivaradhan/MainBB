@@ -24,8 +24,32 @@ MongoClient.connect(url, {
 app.set('view engine', 'ejs');
 app.use("/public", express.static(path.join(__dirname, "/public")));
 app.get('/', function(req, res) {
-    res.render("index")
-        // res.sendFile(path.join(__dirname, 'views/index.html'));
+    var url = process.env.URI || "mongodb://blazing:blazingbane@comments-shard-00-00.9fhsn.mongodb.net:27017,comments-shard-00-01.9fhsn.mongodb.net:27017,comments-shard-00-02.9fhsn.mongodb.net:27017/test?replicaSet=atlas-2rxnym-shard-0&ssl=true&authSource=admin"
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("youtube");
+        dbo.collection("donations").find({}).limit(5).sort("amt", -1).toArray(function(err, result) {
+            if (err) throw err;
+            array = result
+            dbo.collection("donations").find({}).limit(5).sort("time", -1).toArray(function(err, result) {
+                if (err) throw err;
+                arrayT = result
+                dbo.collection("live").find({}).sort("count", -1).limit(20).toArray(function(err, result) {
+                    if (err) throw err;
+                    pillars = result
+                    res.render('index', { array, arrayT, pillars })
+                    db.close();
+                });
+
+            });
+        });
+    });
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("youtube");
+
+    });
+    // res.render("index")
 })
 app.get('/pc', function(req, res) {
     res.render("pc")

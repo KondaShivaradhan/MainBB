@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/style.css">
     <script src="/public/script/script.js"></script>
+    <!-- AOS -->
 
     <!-- Lottie -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -25,6 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.js" integrity="sha256-lZnJXv4iTfqLpnfAHnr1A6+LUpc8wHU33pwJYJhjQ6A=" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5510806899363660" crossorigin="anonymous"></script>
     <style>
         html {
             margin: 0;
@@ -37,6 +39,8 @@
     </style>
     <script>
         window.onload = function() {
+            window.scrollTo(0, 0);
+            getinsta()
             document.getElementById('spin').style.display = "none"
             document.getElementById('click').style.display = "inline"
         };
@@ -51,76 +55,76 @@
         border-radius: 50%;
     }
 </style>
+<%- include('date') %>
 
-<body style="background-color: black;">
+    <body onscroll="isScrolledIntoView(document.getElementById('nbr'));" style="background-color: black;">
+        <div id="navi">
+            <div id="ncon">
+                <div>
+                    <!-- <img src="gamepad.svg" id="svg" alt=""> -->
+                    <svg id="svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gamepad" class="svg-inline--fa fa-gamepad fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path fill="currentColor"
+                            d="M480.07 96H160a160 160 0 1 0 114.24 272h91.52A160 160 0 1 0 480.07 96zM248 268a12 12 0 0 1-12 12h-52v52a12 12 0 0 1-12 12h-24a12 12 0 0 1-12-12v-52H84a12 12 0 0 1-12-12v-24a12 12 0 0 1 12-12h52v-52a12 12 0 0 1 12-12h24a12 12 0 0 1 12 12v52h52a12 12 0 0 1 12 12zm216 76a40 40 0 1 1 40-40 40 40 0 0 1-40 40zm64-96a40 40 0 1 1 40-40 40 40 0 0 1-40 40z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="container" id="ntext">
+                    <div class="wrap">
+                        <!-- <i class="fas fa-spinner"></i> -->
+                        <center>
+                            <div id="spin" class="loading">
 
-    <div id="navi">
-        <div id="ncon">
-            <div>
-                <!-- <img src="gamepad.svg" id="svg" alt=""> -->
-                <svg id="svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gamepad" class="svg-inline--fa fa-gamepad fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                    <path fill="currentColor"
-                        d="M480.07 96H160a160 160 0 1 0 114.24 272h91.52A160 160 0 1 0 480.07 96zM248 268a12 12 0 0 1-12 12h-52v52a12 12 0 0 1-12 12h-24a12 12 0 0 1-12-12v-52H84a12 12 0 0 1-12-12v-24a12 12 0 0 1 12-12h52v-52a12 12 0 0 1 12-12h24a12 12 0 0 1 12 12v52h52a12 12 0 0 1 12 12zm216 76a40 40 0 1 1 40-40 40 40 0 0 1-40 40zm64-96a40 40 0 1 1 40-40 40 40 0 0 1-40 40z">
-                    </path>
-                </svg>
-            </div>
-            <div class="container" id="ntext">
-                <div class="wrap">
-                    <!-- <i class="fas fa-spinner"></i> -->
-                    <center>
-                        <div id="spin" class="loading">
-
-                        </div>
-                    </center>
-                    <button id="click" class="button" onclick="myFunction()"> Play </button>
+                            </div>
+                        </center>
+                        <button id="click" class="button" onclick="myFunction()"> Play </button>
+                    </div>
+                </div>
+                <div id="small" class="container">
+                    <a name="" id="edoti" class="btn btn-primary" href="#about" role="button"> <img src="/public/svg/logo.svg" style="height: 25px;width: 25px;" alt="Kiwi standing on oval"></a>
+                    <a name="" id="edoti" class="btn btn-primary" href="#disc" role="button" title="Discord"> <i class="fab fa-discord">
+                        </i></a>
+                    <a name="" id="edoti" class="btn btn-primary" href="/pillers" role="button"> <i class="fa fa-youtube-play" aria-hidden="true"></i> </a>
+                    <a name="" id="edoti" class="btn btn-primary" href="#play" role="button"> <i class="fa fa-gamepad">
+                        </i></a>
+                    <button onclick="navi()" style="height: 30px;background: transparent;border:white solid 1px;color:white;" class="btn btn-secondary" title=""><i id="rot" class="fas fa-greater-than"></i></button>
                 </div>
             </div>
-            <div id="small" class="container">
-                <a name="" id="edoti" class="btn btn-primary" href="#about" role="button"> <img src="/public/svg/logo.svg" style="height: 25px;width: 25px;" alt="Kiwi standing on oval"></a>
-                <a name="" id="edoti" class="btn btn-primary" href="#disc" role="button" title="Discord"> <i class="fab fa-discord">
-                    </i></a>
-                <a name="" id="edoti" class="btn btn-primary" href="/pillers" role="button"> <i class="fa fa-youtube-play" aria-hidden="true"></i> </a>
-                <a name="" id="edoti" class="btn btn-primary" href="#play" role="button"> <i class="fa fa-gamepad">
-                    </i></a>
-                <button onclick="navi()" style="height: 30px;background: transparent;border:white solid 3px;color:white;" class="btn btn-secondary" title=""><i id="rot" class="fas fa-greater-than"></i></button>
-            </div>
         </div>
-    </div>
-    <section id="bb" style="background-color: black;padding:0px">
+        <section id="bb" style="background-color: black;padding:0px">
 
-        <div class="container">
-            <div class="col-md-12">
-                <video id="firebb" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" src="/public/bbfire.mp4"></video>
+            <div class="container">
+                <div class="col-md-12">
+                    <video id="firebb" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" src="/public/bbfire.mp4"></video>
 
+                </div>
             </div>
-        </div>
 
-    </section>
+        </section>
 
-    <section>
-        <div class="container" id="flex">
-            <div id="stream">
-                <p>
-                    Gaming as a Hobby was planted into my life at a very young age. Started streaming to find people who have similar tastes and form a stable community with great personalities.<br> Choose your platform according to your comfort
-                </p>
-                <div>
-                    <h4>Streaming Platfroms</h4>
-                    <a href="https://www.youtube.com/channel/UCPFM_Ug62Ei3CUfvquG4KOg/live">
-                        <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" height="50px" width="50px" alt="">
-                    </a>
-                    <a href="https://www.twitch.tv/BlazingBaneTV">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/LOGO_TWITCH_CAR_JE_LIVE_SUR_TWITCH_ET_J%27AI_60_000_ABONEE.png" height="50px" width="50px" alt="">
+        <section>
+            <div class="container" id="flex">
+                <div id="stream">
+                    <p>
+                        Gaming as a Hobby was planted into my life at a very young age. Started streaming to find people who have similar tastes and form a stable community with great personalities.<br> Choose your platform according to your comfort
+                    </p>
+                    <div>
+                        <h4>Streaming Platfroms</h4>
+                        <a href="https://www.youtube.com/channel/UCPFM_Ug62Ei3CUfvquG4KOg/live">
+                            <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" height="50px" width="50px" alt="">
+                        </a>
+                        <a href="https://www.twitch.tv/BlazingBaneTV">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/LOGO_TWITCH_CAR_JE_LIVE_SUR_TWITCH_ET_J%27AI_60_000_ABONEE.png" height="50px" width="50px" alt="">
 
-                    </a>
-                    <a href="https://web.rooter.gg/user-profile/19734489">
+                        </a>
+                        <!-- <a href="https://web.rooter.gg/user-profile/19734489">
                         <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQF2XMa6PhtDWQ/company-logo_200_200/0/1519891124423?e=2159024400&v=beta&t=QJMH-T6HIFxUwpB5pFpj5mbkSORubaYmdNSI-OA3Xwc" height="50px" width="50px" alt="">
-                    </a>
-                    <!-- <a href="https://www.facebook.com/gaming/BlazingBane">
+                    </a> -->
+                        <!-- <a href="https://www.facebook.com/gaming/BlazingBane">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUpiWdOX8iZwvaMk6pvomLEylOWi-llWH8qQ&usqp=CAU" height="50px" width="50px" alt="">
                     </a> -->
+                    </div>
                 </div>
-            </div>
-            <!-- <div id="youtube">
+                <!-- <div id="youtube">
                 <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" height="60px" width="60px" alt="">
                 <p>
                     On this platform I will be live streaming PC games mostly FPS
@@ -129,96 +133,280 @@
                 <div class="g-ytsubscribe" data-channelid="UCPFM_Ug62Ei3CUfvquG4KOg" data-layout="default" data-count="default">
                 </div>
             </div> -->
-            <div>
-                <p>
-                    Wanna have a word? use any of the below platfrom. Feel free to start a conversation regarding anything positive.<br> On Instagram I post reels which are about funny movement and short cinematic edits.
+                <div>
+                    <p>
+                        Wanna have a word? use any of the below platfrom. Feel free to start a conversation regarding anything positive.<br> On Instagram I post reels which are about funny movement and short cinematic edits.
+                        <div>
+                            <h4>Connect me with</h4>
+                            <a href="https://www.instagram.com/blazing_bane/reels/">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" height="40px" width="40px" alt="">
+                            </a>
+                            <a href="https://discord.com/users/288963975201423360">
+                                <img src="https://www.freepnglogos.com/uploads/discord-logo-png/concours-discord-cartes-voeux-fortnite-france-6.png" height="40px" width="40px" alt="">
+                            </a>
+                        </div>
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Avant-Tower-Gaming-PC.png" height="50px" width="50px" alt="">
+                    <p>
+                        Every gamer has some sort of setup here's mine without it I'm nothing. I have a Decent specificated PC bought in 2018! check out detailed spec sheet here.
+                    </p>
+                    <a href="pc.html">
+                        <div class="btn btn-primary">
+                            Checkout
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="disc">
+            <div class="container">
+                <iframe id="discord" height="500px" width="100%" src="https://discordapp.com/widget?id=515165357812613140&theme=dark " allowtransparency="true " frameborder="0 "></iframe>
+            </div>
+        </section>
+        <section style="background: linear-gradient(rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.795)), url(https://cdn.theatlantic.com/thumbor/SOAFdsQnmr6vABiLXGROcFbdPQs=/0x274:3499x2242/1600x900/media/img/mt/2017/07/RTXDOMC/original.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;">
+            <div style="backdrop-filter: blur(3px);">
+                <h2 style="font-weight: 900;">Community Stats</h2>
+                <br>
+            </div>
+            <style>
+                @import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+                * {
+                    font-family: 'Montserrat', sans-serif;
+                }
+                
+                body {
+                    background: #FFCC10;
+                    text-align: center;
+                }
+                
+                #nbr {
+                    font-size: 40px;
+                    /* margin: 44px 0 0 0; */
+                }
+                
+                #nbr2 {
+                    font-size: 40px;
+                    /* margin: 44px 0 0 0; */
+                }
+                
+                #nbr3 {
+                    font-size: 40px;
+                    /* margin: 44px 0 0 0; */
+                }
+            </style>
+            <div style="backdrop-filter: blur(3px);width: 80%;margin: 0 auto;text-align: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-around;">
+                <div style="display:flex;flex-direction:row;flex-wrap:nowrap;text-align: center;">
                     <div>
-                        <h4>Connect me with</h4>
-                        <a href="https://www.instagram.com/blazing_bane/reels/">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" height="40px" width="40px" alt="">
-                        </a>
-                        <a href="https://discord.com/users/288963975201423360">
-                            <img src="https://www.freepnglogos.com/uploads/discord-logo-png/concours-discord-cartes-voeux-fortnite-france-6.png" height="40px" width="40px" alt="">
-                        </a>
+                        <i class="fa fa-instagram" aria-hidden="true" style="font-size: 62px;"></i>
                     </div>
-            </div>
-            <div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Avant-Tower-Gaming-PC.png" height="50px" width="50px" alt="">
-                <p>
-                    Every gamer has some sort of setup here's mine without it I'm nothing. I have a Decent specificated PC bought in 2018! check out detailed spec sheet here.
-                </p>
-                <a href="pc.html">
-                    <div class="btn btn-primary">
-                        Checkout
+                    <div>
+                        <p id="nbr2">Follow count here</p>
                     </div>
-                </a>
+                </div>
+                <div style="display:flex;flex-direction:row;flex-wrap:nowrap;text-align: center;">
+                    <div>
+                        <i class="fa fa-youtube-play" style="font-size: 62px;" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <p id="nbr">Sub count here</p>
+                    </div>
+                </div>
+                <div style="display:flex;flex-direction:row;flex-wrap:nowrap;text-align: center;">
+                    <i class="fa fa-twitch" aria-hidden="true" style="font-size: 62px;"></i>
+                    <p id="nbr3">75</p>
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="disc">
-        <div class="container">
-            <iframe id="discord" height="500px" width="100%" src="https://discordapp.com/widget?id=515165357812613140&theme=dark " allowtransparency="true " frameborder="0 "></iframe>
-        </div>
-    </section>
-    <section class="about" id="play" style="background: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.644)), url(https://wallpapercave.com/wp/wc1765288.jpg);
+            <br>
+            <style>
+                table {
+                    color: white;
+                    margin: 0 auto;
+                    background-color: rgb(19, 19, 19);
+                    overflow: scroll;
+                    width: 100%;
+                }
+                
+                #stats {
+                    height: 400px !important;
+                }
+                
+                #over {
+                    top: 200px;
+                    position: relative;
+                    background-color: transparent;
+                    height: 400px !important;
+                }
+                
+                #over:hover #table {
+                    /* display: none; */
+                    background-color: rgb(30, 28, 32);
+                }
+                
+                table,
+                th,
+                td {
+                    text-align: center;
+                    padding: 5px;
+                    border: 1px solid black;
+                }
+                
+                th {
+                    font-weight: 900;
+                }
+                
+                .card-title {
+                    letter-spacing: 3px;
+                    font-size: 30px;
+                    font-family: 'Nunito', sans-serif;
+                    color: white;
+                }
+                
+                .card-body {
+                    /* border-radius: 10px; */
+                    opacity: 0;
+                    transition: all 0.5s;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    justify-content: space-evenly;
+                    background: rgba(0, 0, 0, 0.418);
+                    backdrop-filter: blur(5px);
+                }
+                
+                .card {
+                    border-radius: 30px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    overflow: hidden;
+                    box-shadow: rgba(255, 255, 255, 0.787) 0px 0px 2px 2px;
+                    height: 30vh;
+                    margin: 0 auto;
+                    width: 100%;
+                    text-align: center;
+                    max-width: 30em;
+                }
+                
+                .card:hover .card-body {
+                    justify-content: space-evenly;
+                    transition: all 0.5s;
+                    opacity: 1;
+                }
+                
+                .card:hover table {
+                    display: none;
+                }
+                
+                .card:hover {
+                    box-shadow: rgba(255, 255, 255, 0.787) 0px 0px 5px 6px;
+                    transform: scale(1.02);
+                    transition: all 0.5s;
+                }
+            </style>
+            <div class="card">
+                <div id="table">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Points</th>
+                            <th>Age</th>
+                            <th>Link</th>
+                        </tr>
+                        <% var i=0 %>
+                            <% Object.values(pillars).forEach(element=> { i=i+1%>
+                                <% if(element.count> 10 && element.name!="Relangi mama" && i <15 ){ %>
+                                    <tr>
+                                        <td>
+                                            <%= element.name%>
+                                        </td>
+                                        <td>
+                                            <%= element.count%>
+                                        </td>
+                                        <td>
+                                            <%= date(element.first,element.last) %> Days
+                                        </td>
+                                        <td>
+                                            <a href="<%= element.link %>"> <i style="font-size: 20px;" class="fab fa-youtube"></i> </a>
+
+                                        </td>
+                                    </tr>
+                                    <% }%>
+                                        <% }); %>
+
+                    </table>
+                    <div class="card-body">
+                        <div id="button">
+                            <a href="/pillers">
+                                <button> Explore More</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+        <section class="about" id="play" style="background: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.644)), url(https://wallpapercave.com/wp/wc1765288.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;">
-        <div>
-            <h3 style="font-weight: 900;">What Games I play?</h3>
-            <article>
-                I play mostly FPS games such as <span id="fps2">Battlefield</span> ,<span id="fps2">Apex Legends</span>,
-                <span id="fps2">Rainbow 6 Siege</span>,etc. <br> Here are my Stats for
-                <a id="fps" href="http://blazingbane.herokuapp.com/apex/blazingbane">
-                    Apex Legends
-                </a>
-                <h2>Squad Up?</h2>
-                <div>
-                    Join the Discord server from above
-                </div>
-            </article>
-        </div>
-
-    </section>
-    <br>
-    <section class="about" id="about" ;>
-        <div>
-            <h2 style="font-weight: 900;">Who am I?</h2>
-            <br>
-            <center>
-                <div id="face">
-                </div>
-                <br>
-                <article style="width: 70%;">
-                    A guy named <a id="fps" href="http://kondashivaradhan.github.io">Konda Shivaradhan</a> who has been playing computer games since a kid. Streaming is my ultimate goal and probably setup a good base for gamers of my time!.
+            <div>
+                <h3 style="font-weight: 900;">What Games I play?</h3>
+                <article>
+                    I play mostly FPS games such as <span id="fps2">Battlefield</span> ,<span id="fps2">Apex
+                        Legends</span>,
+                    <span id="fps2">Rainbow 6 Siege</span>,etc. <br> Here are my Stats for
+                    <a id="fps" href="http://blazingbane.herokuapp.com/apex/blazingbane">
+                        Apex Legends
+                    </a>
+                    <h2>Squad Up?</h2>
+                    <div>
+                        Join the Discord server from above
+                    </div>
                 </article>
-            </center>
+            </div>
 
-        </div>
-    </section>
-    <br>
-    <section class="photo" id="photo">
-        <div>
-            <h3 style="font-weight: 900;">Took a few Good Pictures</h3>
-            <a href="https://www.pexels.com/@blazingbane">
-                <button id="but">Pexels.com</button>
-            </a>
-        </div>
+        </section>
+        <br>
+        <section class="about" id="about" ;>
+            <div>
+                <h2 style="font-weight: 900;">Who am I?</h2>
+                <br>
+                <center>
+                    <div id="face">
+                    </div>
+                    <br>
+                    <article style="width: 70%;">
+                        A guy named <a id="fps" href="http://kondashivaradhan.github.io">Konda Shivaradhan</a> who has been playing computer games since a kid. Streaming is my ultimate goal and probably setup a good base for gamers of my time!.
+                    </article>
+                </center>
 
-    </section>
+            </div>
+        </section>
+        <br>
+        <section class="photo" id="photo">
+            <div>
+                <h3 style="font-weight: 900;">Took a few Good Pictures</h3>
+                <a href="https://www.pexels.com/@blazingbane">
+                    <button id="but">Pexels.com</button>
+                </a>
+            </div>
 
-    <footer>
-        <p>Telugu prajalaraa, BlazingBane anu nenu, Youtube lo Live chesi Memalni entertain chesthan ani , Anthaha karana sudditho untan ani pramaanam chesthunnanu *BGM*
-        </p>
-        <div style="display: flex;
-        flex-direction: row;
-        width: 134px;
-        text-align: center;
-        flex-wrap: nowrap;margin: 0 auto;">
-            With
-            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_jhEt7A.json" background="transparent" speed="1" style="width: 20px; height: 20px;" loop autoplay></lottie-player> Blazing Bane
-        </div>
-    </footer>
-</body>
+        </section>
+
+        <footer>
+            <p>Telugu prajalaraa, BlazingBane anu nenu, Youtube lo Live chesi Memalni entertain chesthan ani , Anthaha karana sudditho untan ani pramaanam chesthunnanu *BGM*
+            </p>
+            <div style="display: flex;flex-direction: row;flex-wrap: nowrap;margin: 0 auto;max-width: 170px;">
+                With
+                <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_tcozqiwz.json" background="transparent" speed="1" style="width: 40px; height: 40px; position: relative; top:-10px" loop autoplay></lottie-player>
+                BlazingBane
+            </div>
+        </footer>
+    </body>
 
 </html>

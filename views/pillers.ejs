@@ -30,6 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.js" integrity="sha256-lZnJXv4iTfqLpnfAHnr1A6+LUpc8wHU33pwJYJhjQ6A=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="/public/script/script.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5510806899363660" crossorigin="anonymous"></script>
     <title>BB Family</title>
 </head>
 <%- include('date') %>
@@ -61,7 +62,7 @@
         <div class="container" style="padding: 30px; text-align: center;min-height:100%;position: relative;width: auto;background:transparent ">
             <div style="display: flex; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;gap:2px">
                 <% Object.values(array).forEach(element=> {%>
-                    <% if(element.count> 300 && element.name!="Relangi mama" ){ %>
+                    <% if(element.count> 500 && element.name!="Relangi mama" ){ %>
                         <div class="opp" id="<%= element.name.toUpperCase() %>">
                             <div class="gradient-box">
                                 <div class="main">
@@ -70,7 +71,7 @@
                                             <h5 style="font-weight: 500;">
                                                 <img style="margin-top:10px;border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
                                                 <span style="font-weight: 600;font-size: 0.7em;">
-                                                    <%= element.name.toUpperCase()%>
+                                                    <%= element.name%>
                                                 </span>
                                                 <br>
                                                 <span style="font-weight: 600;font-size: 0.7em;">
@@ -111,7 +112,7 @@
                                     <div id="stats">
                                         <img style="border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
                                         <span style="font-weight: 600; font-size: 0.7em;">
-                                            <%= element.name.toUpperCase()%>
+                                            <%= element.name%>
                                         </span>
                                         <br>
                                         <span style=" font-weight: 600;font-size: 0.7em;">

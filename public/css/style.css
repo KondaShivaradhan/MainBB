@@ -104,7 +104,7 @@ footer {
     height: 100vh;
     width: 100%;
     position: fixed;
-    padding: 20px;
+    /* padding: 20px; */
     z-index: 1000;
     background: linear-gradient(166deg, #22477e, #1d201f, #f05b6e);
     background-size: 600% 600%;
@@ -118,7 +118,7 @@ footer {
 #edoti {
     background: transparent;
     border: transparent 0px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 @keyframes AnimationName {
@@ -308,7 +308,7 @@ button:focus {
     #ncon {
         position: relative;
         top: 50%;
-        transform: translateY(-60%);
+        transform: translateY(-50%);
         height: auto;
     }
     #firebb {
