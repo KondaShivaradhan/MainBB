@@ -40,7 +40,11 @@
         <div id="navi">
             <div id="ncon">
                 <div id="small" class="container">
-                    <a name="" id="edoti" class="btn btn-primary" href="/" role="button"> <img src="/public/images/logo.svg" style="height: 25px;width: 25px;" alt="BB"></a>
+                    <a name="" id="edoti" class="btn btn-primary" href="/" role="button"> <img src="/public/svg/logo.svg" style="height: 25px;width: 25px;" alt="Kiwi standing on oval" title="About ME"></a>
+                    </i>
+                    </a>
+                    <a name="" id="edoti" class="btn btn-primary" href="/stats" role="button" title="gaming related"> <i class="fa fa-gamepad">
+                        </i></a>
                     <a name="" id="edoti" class="btn btn-primary" href="https://discord.gg/U5jDNUPceM" role="button" title="Discord"> <i class="fab fa-discord">
                         </i></a>
                     <a name="" id="edoti" class="btn btn-primary" href="https://www.instagram.com/blazing_bane/" role="button"> <i class="fa fa-instagram" aria-hidden="true"></i>
@@ -49,11 +53,218 @@
                 </div>
             </div>
         </div>
-        <!-- <%- JSON.stringify(pillars) %> -->
+        <!-- <div id="parawindow" style="height: 70px;">
+            <div id="para">
+                <h3 id="Ghead">Members of Blazing Bane</h3>
+            </div>
+        </div>
+        <div class="member">
+        </div> -->
+        <!-- <%- JSON.stringify(pillars) %>
+        <div id="parawindow" style="height: 70px;">
+            <div id="para">
+                <h3 id="Ghead">Supports of Blazing Bane</h3>
+            </div>
+        </div>
+        <style>
+            table {
+                color: white;
+                margin: 0 auto;
+                background-color: rgb(19, 19, 19);
+                overflow: scroll;
+                width: 100%;
+            }
+            /* #stats {
+                height: 400px !important;
+            } */
+            
+            #over {
+                top: 200px;
+                position: relative;
+                background-color: transparent;
+                height: 400px !important;
+            }
+            
+            #over:hover #table {
+                /* display: none; */
+                background-color: rgb(30, 28, 32);
+            }
+            
+            table,
+            th,
+            td {
+                text-align: center;
+                padding: 5px;
+                border: 1px solid black;
+            }
+            
+            th {
+                font-weight: 900;
+            }
+            
+            .card-title {
+                letter-spacing: 3px;
+                font-size: 30px;
+                font-family: 'Nunito', sans-serif;
+                color: white;
+            }
+            
+            .card-body {
+                /* border-radius: 10px; */
+                opacity: 0;
+                transition: all 0.5s;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-evenly;
+                background: rgba(0, 0, 0, 0.418);
+                backdrop-filter: blur(5px);
+            }
+            
+            .card {
+                border-radius: 30px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                overflow: hidden;
+                box-shadow: rgba(255, 255, 255, 0.787) 0px 0px 2px 2px;
+                margin: 0 auto;
+                width: 100%;
+                text-align: center;
+                max-width: 30em;
+            }
+            
+            .card:hover .card-body {
+                justify-content: space-evenly;
+                transition: all 0.5s;
+                opacity: 1;
+            }
+            
+            .card:hover {
+                box-shadow: rgba(255, 255, 255, 0.787) 0px 0px 5px 6px;
+                transform: scale(1.02);
+                transition: all 0.5s;
+            }
+        </style>
+        <div style="padding: 30px;width:80%;display: flex;flex-direction: row;flex-wrap:wrap;justify-content: space-evenly;margin: 0 auto;">
+            <div class="card">
+                <div id="table">
+                    <table>
+                        <tr>
+                            <th colspan="2">
+                                Top Donators
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>amout</th>
+                        </tr>
+                        <% var i=0 %>
+                            <% Object.values(array).forEach(element=> { i=i+1%>
+                                <% if(true){ %>
+                                    <tr>
+                                        <td>
+                                            <%= element.title%>
+                                        </td>
+                                        <td>
+                                            <%= element.amt%>₹
+                                        </td>
+                                    </tr>
+                                    <% }%>
+                                        <% }); %>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div id="table">
+                    <table>
+                        <tr>
+                            <th colspan="2">
+                                Recent Donators
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>amout</th>
+                        </tr>
+                        <% var i=0 %>
+                            <% Object.values(arrayT).forEach(element=> { i=i+1%>
+                                <% if(true){ %>
+                                    <tr>
+                                        <td>
+                                            <%= element.title%>
+                                        </td>
+                                        <td>
+                                            <%= element.amt%>₹
+                                        </td>
+                                    </tr>
+                                    <% }%>
+                                        <% }); %>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <p style="color: white;text-align: center;">Note* only UPI donations are mentioned here.</p> -->
+
         <div id="parawindow" style="height: 70px;">
             <div id="para">
                 <h3 id="Ghead">Pillers of Blazing Bane</h3>
             </div>
+        </div>
+        <br>
+        <h3 style="text-align: center;color: white;">Long run Viewers</h3>
+        <div class="container" style="padding: 30px; text-align: center;min-height:100%;position: relative;width: auto;background:transparent ">
+            <div style="display: flex; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;gap:2px">
+                <% Object.values(pillars).forEach(element=> {%>
+                    <% if(date(element.first,element.last)>(maxage-3) && (element.name!="Blazing Bane")&&(element.name!="Relangi mama")&&(element.name!="shivaradhan konda")){ %>
+                        <div class="opp" id="<%= element.name.toUpperCase() %>">
+                            <div class="gradient-box">
+                                <div class="main">
+                                    <div class="stattop" style="height: 100%;padding:10px;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
+                                        <div id="stats">
+                                            <h5 style="font-weight: 500;">
+                                                <img style="margin-top:10px;border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
+                                                <span style="font-weight: 600;font-size: 0.7em;">
+                                                    <%= element.name%>
+                                                </span>
+                                                <br>
+                                                <span style="font-weight: 600;font-size: 0.7em;">
+                                                    <div
+                                                        style="display: flex;flex-wrap: nowrap;flex-direction: row;justify-content:center;align-items: center;width: auto;gap: 5px  ;">
+                                                        <lottie-player
+                                                            src="https://assets6.lottiefiles.com/packages/lf20_0jburbj5.json"
+                                                            background="transparent" speed="1"
+                                                            style="width: 30px; height: 30px;" loop autoplay>
+                                                        </lottie-player>
+                                                        <%= element.count%>
+                                                    </div>
+                                                    <!-- <%= element.comment %> <br> -->
+                                                    <!-- <p
+                                                        style="text-align: center;font-size: small;">
+                                                    </p> -->
+                                                    Age:
+                                                    <%= date(element.first,element.last) %> Days <br>
+                                                        <!-- <p
+                                                        style="text-align: center;font-size: small;">
+                                                        Age:
+                                                        <%= date(element.first,element.last) %> Days
+                                                    </p> -->
+                                                        <a href="<%= element.link %>"> <i style="font-size: 20px;"
+                                                                class="fab fa-youtube"></i> </a>
+                                                </span>
+                                            </h5>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% }); %>
+
+            </div>
+
         </div>
         <div class="search">
             <input type="text" id="search" onchange="search()">
@@ -61,7 +272,7 @@
         <!-- linear-gradient(45deg,rgb(57, 132, 245), rgba(160, 31, 31, 0.315), rgba(131, 73, 73, 0.315), rgb(57, 132, 245)); -->
         <div class="container" style="padding: 30px; text-align: center;min-height:100%;position: relative;width: auto;background:transparent ">
             <div style="display: flex; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;gap:2px">
-                <% Object.values(array).forEach(element=> {%>
+                <% Object.values(pillars).forEach(element=> {%>
                     <% if(element.count> 500 && element.name!="Relangi mama" ){ %>
                         <div class="opp" id="<%= element.name.toUpperCase() %>">
                             <div class="gradient-box">
@@ -84,20 +295,20 @@
                                                         </lottie-player>
                                                         <%= element.count%>
                                                     </div>
-                                                    <%= element.comment %> <br>
+                                                    <!-- <%= element.comment %> <br> -->
                                                     <!-- <p
                                                         style="text-align: center;font-size: small;">
                                                         
                                                     </p> -->
                                                     Age:
                                                     <%= date(element.first,element.last) %> Days <br>
-                                                    <!-- <p
+                                                        <!-- <p
                                                         style="text-align: center;font-size: small;">
                                                         Age:
                                                         <%= date(element.first,element.last) %> Days
                                                     </p> -->
-                                                    <a href="<%= element.link %>"> <i style="font-size: 20px;"
-                                                            class="fab fa-youtube"></i> </a>
+                                                        <a href="<%= element.link %>"> <i style="font-size: 20px;"
+                                                                class="fab fa-youtube"></i> </a>
                                                 </span>
                                             </h5>
 
@@ -122,10 +333,10 @@
                                                 <i style="color: yellow;" class="fas fa-star"></i>
                                                 <%= element.count%>
                                             </div>
-                                            <p
+                                            <!-- <p
                                                 style="margin-top:2px;overflow: auto;text-align: center;font-size: small;">
                                                 <%= element.comment %>
-                                            </p>
+                                            </p> -->
                                             <p
                                                 style="margin-top:5px;overflow: auto;height: auto;width:100%;text-align: center;">
                                                 Age:

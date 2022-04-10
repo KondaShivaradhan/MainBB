@@ -305,6 +305,9 @@ button:focus {
     #svg {
         transform: scale(2);
     }
+    #about {
+        height: 70vh
+    }
     #ncon {
         position: relative;
         top: 50%;

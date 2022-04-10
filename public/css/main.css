@@ -21,7 +21,7 @@ body {
 #navi {
     color: white;
     text-align: center;
-    height: 70px;
+    height: 65px;
     width: 100%;
     position: relative;
     background: linear-gradient(166deg, #22477e, #1d201f, #f05b6e);
@@ -61,6 +61,12 @@ body {
     color: white;
 }
 
+#edoti {
+    background: transparent;
+    border: transparent 0px;
+    font-size: 25px;
+}
+
 #ncon {
     position: relative;
     top: 50%;
@@ -72,7 +78,7 @@ body {
     #ncon {
         position: relative;
         top: 50%;
-        transform: translateY(-60%);
+        transform: translateY(-50%);
         height: auto;
     }
 }

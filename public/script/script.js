@@ -12,18 +12,20 @@ function search() {
     }
 }
 // instargram 
-let getinsta = () => {
+let loaddata = () => {
         fetch(`https://raw.githubusercontent.com/KondaShivaradhan/cloud/main/insta.json`)
             .then(response => {
                 return response.json()
             })
             .then(data => {
-                console.log(data.followers);
-                document.getElementById('nbr2').innerHTML = data.followers;
+                // console.log(data.games);
+                // console.log(data.insta.followers);
+                document.getElementById('nbr2').innerHTML = data.insta.followers;
+                document.getElementById('gamesfetch').innerHTML = data.games;
             }).catch((err) => console.log(err));
 
     }
-    // getinsta();
+    // loaddata();
     // subcount
 let getdata = () => {
     fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCPFM_Ug62Ei3CUfvquG4KOg&key=AIzaSyBVt2GmJFkuMANajEWKddIfyqKMfuJbuDA`)
@@ -31,13 +33,38 @@ let getdata = () => {
             return response.json()
         })
         .then(data => {
-            console.log(data);
+            // console.log(data);
             document.getElementById('nbr').innerHTML = data["items"][0].statistics.subscriberCount;
             // viewCount.innerHTML = data["items"][0].statistics.viewCount;
             // videoCount.innerHTML = data["items"][0].statistics.videoCount;
         })
 }
+let getmem = () => {
+    fetch(`https://www.googleapis.com/auth/youtube.channel-memberships.creator?part=statistics&id=UCPFM_Ug62Ei3CUfvquG4KOg&key=AIzaSyBVt2GmJFkuMANajEWKddIfyqKMfuJbuDA`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            console.log(data);
+            // document.getElementById('nbr').innerHTML = data["items"][0].statistics.subscriberCount;
+            // viewCount.innerHTML = data["items"][0].statistics.viewCount;
+            // videoCount.innerHTML = data["items"][0].statistics.videoCount;
+        })
+}
 getdata();
+// oldest viewer
+function old() {
+    maxage = 1;
+    var opps = document.getElementsByClassName('opp')
+    for (let i = 0; i < opps.length; i++) {
+        if (opps[i].id.includes(val.toUpperCase())) {
+            console.log(opps[i].id);
+            document.getElementById(opps[i].id).style.display = ""
+        } else {
+            document.getElementById(opps[i].id).style.display = "none"
+        }
+    }
+}
 // smooth scroll
 $(document).on("click", 'a[href^="#"]', function(event) {
     event.preventDefault();

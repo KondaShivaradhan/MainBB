@@ -40,7 +40,8 @@
     <script>
         window.onload = function() {
             window.scrollTo(0, 0);
-            getinsta()
+            loaddata()
+            getmem()
             document.getElementById('spin').style.display = "none"
             document.getElementById('click').style.display = "inline"
         };
@@ -80,11 +81,11 @@
                     </div>
                 </div>
                 <div id="small" class="container">
-                    <a name="" id="edoti" class="btn btn-primary" href="#about" role="button"> <img src="/public/svg/logo.svg" style="height: 25px;width: 25px;" alt="Kiwi standing on oval"></a>
-                    <a name="" id="edoti" class="btn btn-primary" href="#disc" role="button" title="Discord"> <i class="fab fa-discord">
+                    <a name="" id="edoti" class="btn btn-primary" href="#about" role="button"> <img src="/public/svg/logo.svg" style="height: 25px;width: 25px;" alt="Kiwi standing on oval" title="About ME"></a>
+                    <a name="" id="edoti" class="btn btn-primary" href="#disc" role="button" title="Discord" title="discord"> <i class="fab fa-discord">
                         </i></a>
-                    <a name="" id="edoti" class="btn btn-primary" href="/pillers" role="button"> <i class="fa fa-youtube-play" aria-hidden="true"></i> </a>
-                    <a name="" id="edoti" class="btn btn-primary" href="#play" role="button"> <i class="fa fa-gamepad">
+                    <a name="" id="edoti" class="btn btn-primary" href="/pillers" role="button" title="Pillers"> <i class="fa fa-youtube-play" aria-hidden="true"></i> </a>
+                    <a name="" id="edoti" class="btn btn-primary" href="/stats" role="button" title="gaming related"> <i class="fa fa-chart-pie">
                         </i></a>
                     <button onclick="navi()" style="height: 30px;background: transparent;border:white solid 1px;color:white;" class="btn btn-secondary" title=""><i id="rot" class="fas fa-greater-than"></i></button>
                 </div>
@@ -348,7 +349,147 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <style>
+                table {
+                    color: white;
+                    margin: 0 auto;
+                    background-color: rgb(19, 19, 19);
+                    overflow: scroll;
+                    width: 100%;
+                }
+                /* #stats {
+                    height: 400px !important;
+                } */
+                
+                #over {
+                    top: 200px;
+                    position: relative;
+                    background-color: transparent;
+                    height: 400px !important;
+                }
+                
+                #over:hover #table {
+                    /* display: none; */
+                    background-color: rgb(30, 28, 32);
+                }
+                
+                table,
+                th,
+                td {
+                    text-align: center;
+                    padding: 5px;
+                    border: 1px solid black;
+                }
+                
+                th {
+                    font-weight: 900;
+                }
+                
+                .card-title {
+                    letter-spacing: 3px;
+                    font-size: 30px;
+                    font-family: 'Nunito', sans-serif;
+                    color: white;
+                }
+                
+                .card-body {
+                    /* border-radius: 10px; */
+                    opacity: 0;
+                    transition: all 0.5s;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    justify-content: space-evenly;
+                    background: rgba(0, 0, 0, 0.418);
+                    backdrop-filter: blur(5px);
+                }
+                
+                .card2 {
+                    border-radius: 30px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    overflow: hidden;
+                    box-shadow: rgba(255, 255, 255, 0.787) 0px 0px 2px 2px;
+                    margin: 0 auto;
+                    width: 100%;
+                    text-align: center;
+                    max-width: 30em;
+                }
+                
+                .card2:hover .card-body {
+                    justify-content: space-evenly;
+                    transition: all 0.5s;
+                    opacity: 1;
+                }
+                
+                .card2:hover {
+                    box-shadow: rgba(255, 255, 255, 0.787) 0px 0px 5px 6px;
+                    transform: scale(1.02);
+                    transition: all 0.5s;
+                }
+            </style>
+            <div style="padding: 30px;width:80%;display: flex;flex-direction: row;flex-wrap:wrap;justify-content: space-evenly;margin: 0 auto;">
+                <div class="card2">
+                    <div id="table">
+                        <table>
+                            <tr>
+                                <th colspan="2">
+                                    Top Donators
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>amout</th>
+                            </tr>
+                            <% var i=0 %>
+                                <% Object.values(array).forEach(element=> { i=i+1%>
+                                    <% if(true){ %>
+                                        <tr>
+                                            <td>
+                                                <%= element.title%>
+                                            </td>
+                                            <td>
+                                                <%= element.amt%>₹
+                                            </td>
+                                        </tr>
+                                        <% }%>
+                                            <% }); %>
+                        </table>
+                    </div>
+                </div>
+                <div class="card2">
+                    <div id="table">
+                        <table>
+                            <tr>
+                                <th colspan="2">
+                                    Recent Donators
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>amout</th>
+                            </tr>
+                            <% var i=0 %>
+                                <% Object.values(arrayT).forEach(element=> { i=i+1%>
+                                    <% if(true){ %>
+                                        <tr>
+                                            <td>
+                                                <%= element.title%>
+                                            </td>
+                                            <td>
+                                                <%= element.amt%>₹
+                                            </td>
+                                        </tr>
+                                        <% }%>
+                                            <% }); %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <p style="color: white;text-align: center;">Note* only UPI donations are mentioned here.</p>
         </section>
         <section class="about" id="play" style="background: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.644)), url(https://wallpapercave.com/wp/wc1765288.jpg);
     background-position: center;
@@ -357,12 +498,14 @@
             <div>
                 <h3 style="font-weight: 900;">What Games I play?</h3>
                 <article>
-                    I play mostly FPS games such as <span id="fps2">Battlefield</span> ,<span id="fps2">Apex
-                        Legends</span>,
-                    <span id="fps2">Rainbow 6 Siege</span>,etc. <br> Here are my Stats for
-                    <a id="fps" href="http://blazingbane.herokuapp.com/apex/blazingbane">
+                    I prefer to play with a group of people I know. I enjoy playing a variety of games, the most of which are multiplayer, such as
+                    <p id="gamesfetch">
+                        <!-- fetched from ,github -->
+                    </p>
+                    My stats for
+                    <a id="fps" href="apex/blazingbane-yt">
                         Apex Legends
-                    </a>
+                        </a>
                     <h2>Squad Up?</h2>
                     <div>
                         Join the Discord server from above
@@ -372,7 +515,7 @@
 
         </section>
         <br>
-        <section class="about" id="about" ;>
+        <section class="about" id="about">
             <div>
                 <h2 style="font-weight: 900;">Who am I?</h2>
                 <br>
@@ -380,8 +523,9 @@
                     <div id="face">
                     </div>
                     <br>
-                    <article style="width: 70%;">
-                        A guy named <a id="fps" href="http://kondashivaradhan.github.io">Konda Shivaradhan</a> who has been playing computer games since a kid. Streaming is my ultimate goal and probably setup a good base for gamers of my time!.
+                    <article style="width: 80%;">
+                        I'm <a id="fps" href="http://kondashivaradhan.github.io">Konda Shivaradhan</a>, has been playing video games since a kid. Streaming is my ultimate goal and probably setup a good base for gamers of my time!. to know more click here
+                        <a id="fps" href="http://kondashivaradhan.github.io">click here</a>.
                     </article>
                 </center>
 
