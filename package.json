@@ -1,13 +1,23 @@
 {
-  "dependencies": {
-    "apex-api": "^3.1.0",
-    "axios": "^0.26.1",
-    "ejs": "^3.1.6",
-    "express": "^4.17.3",
-    "https": "^1.0.0",
-    "mongodb": "^4.4.1",
-    "mongoose": "^6.2.7",
-    "node-fetch": "^3.2.3",
-    "r6api.js": "^4.1.0"
-  }
+    "name": "MainBB",
+    "version": "1.0.0",
+    "description": "An web Application created for BlazingBane",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "author": "BlazingBane",
+    "license": "ISC",
+    "dependencies": {
+        "apex-api": "^3.1.0",
+        "axios": "^0.26.1",
+        "ejs": "^3.1.6",
+        "express": "^4.17.3",
+        "https": "^1.0.0",
+        "mongodb": "^4.4.1",
+        "mongoose": "^6.2.7",
+        "node-fetch": "^3.2.3",
+        "r6api.js": "^4.1.0"
+    }
 }
