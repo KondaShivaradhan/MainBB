@@ -32,7 +32,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function() {
-            var availableTags = <% - JSON.stringify(an) %>
+            var availableTags = <%- JSON.stringify(an) %>
 
             console.log(availableTags);
 
@@ -81,7 +81,7 @@
             <div id="stuff">
                 <h3 style="letter-spacing: 2px;">Origin ID</h3>
                 <div class="ui-widget">
-                    <input id="tags" placeholder="e.g BlazingBane">
+                    <input id="tags" placeholder="e.g BlazingBane-yt">
                 </div>
                 <a id="r6a" href='' onclick=" if( !$('#tags').val() ) {
                     
@@ -91,8 +91,7 @@
                 }
               ">
                     <br>
-                    <button type="button" name="" id="" class="btn btn-dark">Search <i class="fa fa-search"
-                            aria-hidden="true"></i> </button>
+                    <button type="button" name="" id="" class="btn btn-dark">Search <i class="fa fa-search" aria-hidden="true"></i> </button>
                 </a>
                 <!-- <h3 style="letter-spacing: 2px;">Origin ID</h3>
                 <input type="text" id="qta_field" placeholder="BlazingBane" value="BlazingBane">

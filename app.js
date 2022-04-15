@@ -187,7 +187,7 @@ app.get('/bf/:Name', function(req, res) {
 });
 
 app.get('/apex/:Name', function(req, res) {
-    var url = process.env.URI || "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
+    var url = "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
 
     const id = req.params.Name
     apex.user(id, 'PC').then(data => {
@@ -222,7 +222,7 @@ app.get('/apex/:Name', function(req, res) {
 });
 
 app.get('/r6/:Name', function(req, res) {
-    var url = process.env.URI || "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
+    var url = "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
     const un = req.params.Name
     const username = req.params.Name
     platform = 'uplay';
@@ -297,7 +297,7 @@ app.get('/:User/:Legend', function(req, res) {
 
 });
 app.get('/r6s', function(req, res) {
-    var url = process.env.URI || "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
+    var url = "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
 
     function data() {
         try {
@@ -324,7 +324,7 @@ app.get('/r6s', function(req, res) {
         // res.render('r6s')
 });
 app.get('/apex', function(req, res) {
-    var url = process.env.URI || "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
+    var url = "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
 
     function data() {
 
@@ -339,6 +339,7 @@ app.get('/apex', function(req, res) {
                     an.push(obj[o].uname);
                 }
                 db.close();
+                console.log(an);
                 res.render('apex', { an: an });
             });
         });
