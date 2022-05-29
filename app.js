@@ -13,7 +13,15 @@ const R6API = require('r6api.js').default;
 var path = require('path');
 var apex = require('./stats/apex.js')
 const Apex = require('./modals/Apex');
-// process.env.URI ||
+const cors = require("cors");
+const corsOptions = {
+    origin: '*',
+    credentials: true, //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions))
+    // process.env.URI ||
 var url = "mongodb://blazing:blazingbane@comments-shard-00-00.9fhsn.mongodb.net:27017,comments-shard-00-01.9fhsn.mongodb.net:27017,comments-shard-00-02.9fhsn.mongodb.net:27017/test?replicaSet=atlas-2rxnym-shard-0&ssl=true&authSource=admin"
 MongoClient.connect(url, {
     useNewUrlParser: true,
@@ -346,6 +354,6 @@ app.get('/apex', function(req, res) {
     }
     data()
 });
-app.listen(process.env.PORT || 7979)
+app.listen(process.env.PORT || 5000)
 console.log('====================================');
-console.log('sever started at 7979 for Blazing Bane mega website');
+console.log('sever started at 5000 for Blazing Bane mega website');

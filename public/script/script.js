@@ -1,13 +1,21 @@
 function search() {
     var val = document.getElementById('search').value
+        // var lrdiv = document.getElementById('longrun')
+        // lrdiv.style.display = 'none'
     console.log(val);
+    val = val.toUpperCase()
     var opps = document.getElementsByClassName('opp')
+        // console.log(opps.length);
     for (let i = 0; i < opps.length; i++) {
-        if (opps[i].id.includes(val.toUpperCase())) {
-            console.log(opps[i].id);
-            document.getElementById(opps[i].id).style.display = ""
+        Uname = opps[i].className.toUpperCase().substring(4, )
+        if (Uname.includes(val))
+            console.log(Uname.includes(val))
+        if (Uname.includes(val)) {
+            // console.log(opps[i].className);
+            opps[i].style.display = ""
         } else {
-            document.getElementById(opps[i].id).style.display = "none"
+            // console.log(opps[i].className);
+            opps[i].style.display = "none"
         }
     }
 }
