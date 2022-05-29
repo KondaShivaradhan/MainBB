@@ -59,17 +59,22 @@
             </div>
         </div>
         <br>
-        <h3 style="text-align: center;color: white;">Long run Viewers</h3>
-        <!-- LONG RUN VIEWERS -->
-
-
-        <!-- linear-gradient(45deg,rgb(57, 132, 245), rgba(160, 31, 31, 0.315), rgba(131, 73, 73, 0.315), rgb(57, 132, 245)); -->
-
-        <footer>
+        <% Object.values(viewer).forEach(element=> {%>
             <p>
-                with <i style="color:rgb(251, 88, 115)" class="fas fa-heart"></i> Blazing Bane
+                <%= element.name%>
             </p>
-        </footer>
+            <%}%>
+
+                <!-- LONG RUN VIEWERS -->
+
+
+                <!-- linear-gradient(45deg,rgb(57, 132, 245), rgba(160, 31, 31, 0.315), rgba(131, 73, 73, 0.315), rgb(57, 132, 245)); -->
+
+                <footer>
+                    <p>
+                        with <i style="color:rgb(251, 88, 115)" class="fas fa-heart"></i> Blazing Bane
+                    </p>
+                </footer>
 
     </body>
 
