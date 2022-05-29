@@ -19,7 +19,7 @@ const corsOptions = {
     credentials: true, //access-control-allow-credentials:true
     optionSuccessStatus: 200,
 }
-
+var ObjectId = require('mongodb').ObjectId;
 app.use(cors(corsOptions))
     // process.env.URI ||
 var url = "mongodb://blazing:blazingbane@comments-shard-00-00.9fhsn.mongodb.net:27017,comments-shard-00-01.9fhsn.mongodb.net:27017,comments-shard-00-02.9fhsn.mongodb.net:27017/test?replicaSet=atlas-2rxnym-shard-0&ssl=true&authSource=admin"
@@ -61,6 +61,23 @@ app.get('/pc', function(req, res) {
         // res.sendFile(path.join(__dirname, 'views/pc.html'));
 })
 var pillars = ["JayanthRaj Vipergaming War-hulk War-lord Sritan Ravan-gaming Asura-Vajresh Seven-yeshwanth Imvjgamer Rexop Baresspanda Ramp-sd Dunde-ganesh Shivanand-yadav Serious-gaming Suresh-reddy Mahesh-yadav Bewakoof-edits JSC-gaming Balagoni-gamer Arun-perem Ak-47 Sai-Krishna Pavan-gandham My3-ravi Siva-chaitanya Vinod-mourya Speedy-s9 Prabhath-verma Sunil-p Charan-cherry Harsha-reddy Sg-king Affective-gaming Imspeed Ghost-gamer Overpro-Yt Gamerd Unitedwestand Lightz Bullymaguire Chotku Gamer111 Max-master Cdking Manigamingtelugu Cyclonous Crazy Asura-rekrax Aditya-verma Abhishek monstol elcin kavin-walton ryft-yt wyatt"]
+app.get('/viewer/:Par', function name(req, res) {
+    obid = req.params.Par
+    console.log(obid);
+    var url = "mongodb://blazing:blazingbane@comments-shard-00-00.9fhsn.mongodb.net:27017,comments-shard-00-01.9fhsn.mongodb.net:27017,comments-shard-00-02.9fhsn.mongodb.net:27017/test?replicaSet=atlas-2rxnym-shard-0&ssl=true&authSource=admin"
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("youtube");
+        dbo.collection("live").find({ '_id': ObjectId(obid) }).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result);
+            viewer = result
+            maxage = 1
+            res.render('viewer', { viewer })
+            db.close();
+        });
+    });
+})
 
 app.get('/pillers', function(req, res) {
     var url = "mongodb://blazing:blazingbane@comments-shard-00-00.9fhsn.mongodb.net:27017,comments-shard-00-01.9fhsn.mongodb.net:27017,comments-shard-00-02.9fhsn.mongodb.net:27017/test?replicaSet=atlas-2rxnym-shard-0&ssl=true&authSource=admin"
@@ -101,28 +118,9 @@ app.get('/pillers', function(req, res) {
             });
         });
     });
-    // MongoClient.connect(url, function(err, db) {
-    //     if (err) throw err;
-    //     var dbo = db.db("youtube");
-    //     dbo.collection("live").find({}).sort("count", -1).toArray(function(err, result) {
-    //         if (err) throw err;
-    //         array = result
-    //         res.render('pillers.ejs', { array, pillars })
-    //         db.close();
-    //     });
-    // });
 });
 
 
-//  stats site
-// var express = require('express');
-// const fetch = require("node-fetch");
-// var app = express();
-// const https = require('https');
-// const axios = require('axios')
-// var mongo = require('mongodb');
-// const MongoClient = require('mongodb').MongoClient;
-// const ApexM = require('./modals/Apex');
 var url = process.env.URI || "mongodb://root:Rlsss%405007@cluster0-shard-00-00.uj92c.mongodb.net:27017,cluster0-shard-00-01.uj92c.mongodb.net:27017,cluster0-shard-00-02.uj92c.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-fb8wzy-shard-0&authSource=admin&retryWrites=true&w=majority"
 MongoClient.connect(url, {
     useNewUrlParser: true,

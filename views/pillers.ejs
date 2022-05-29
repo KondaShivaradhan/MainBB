@@ -65,6 +65,7 @@
             <div style="display: flex; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;gap:2px">
                 <% Object.values(pillars).forEach(element=> {%>
                     <% if(date(element.first,element.last)>(maxage-3) && (element.name!="Blazing Bane")&&(element.name!="Relangi mama")&&(element.name!="shivaradhan konda")){ %>
+
                         <div class="opp <%= element.name %>">
                             <div class="gradient-box">
                                 <div class="main">
@@ -97,11 +98,11 @@
                                                         Age:
                                                         <%= date(element.first,element.last) %> Days
                                                     </p> -->
+                                                    <a href="/viewer/<%= element._id %>">View More</a>
                                                         <a href="<%= element.link %>"> <i style="font-size: 20px;"
                                                                 class="fab fa-youtube"></i> </a>
                                                 </span>
                                             </h5>
-
                                         </div>
                                     </div>
                                 </div>
