@@ -13,6 +13,7 @@ html {
 
 body {
     background-color: black !important;
+    padding: 0;
 }
 
 
@@ -240,10 +241,10 @@ i {
 }
 
 .main {
-    height: 180px;
+    height: 150px;
     border-radius: 20px;
     position: relative;
-    background-color: white;
+    background-color: rgb(214, 214, 214);
 }
 
 

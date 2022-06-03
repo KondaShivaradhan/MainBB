@@ -58,78 +58,25 @@
                 <h3 id="Ghead">Pillers of Blazing Bane</h3>
             </div>
         </div>
-        <br>
-        <h3 style="text-align: center;color: white;">Long run Viewers</h3>
-        <!-- LONG RUN VIEWERS -->
-        <div class="container" id="longrun" style="padding: 30px; text-align: center;min-height:100%;position: relative;width: auto;background:transparent ">
-            <div style="display: flex; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;gap:2px">
-                <% Object.values(pillars).forEach(element=> {%>
-                    <% if(date(element.first,element.last)>(maxage-3) && (element.name!="Blazing Bane")&&(element.name!="Relangi mama")&&(element.name!="shivaradhan konda")){ %>
-
-                        <div class="opp <%= element.name %>">
-                            <div class="gradient-box">
-                                <div class="main">
-                                    <div class="stattop" style="height: 100%;padding:10px;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
-                                        <div id="stats">
-                                            <h5 style="font-weight: 500;">
-                                                <img style="margin-top:10px;border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
-                                                <span style="font-weight: 600;font-size: 0.7em;">
-                                                    <%= element.name%>
-                                                </span>
-                                                <br>
-                                                <span style="font-weight: 600;font-size: 0.7em;">
-                                                    <div
-                                                        style="display: flex;flex-wrap: nowrap;flex-direction: row;justify-content:center;align-items: center;width: auto;gap: 5px  ;">
-                                                        <lottie-player
-                                                            src="https://assets6.lottiefiles.com/packages/lf20_0jburbj5.json"
-                                                            background="transparent" speed="1"
-                                                            style="width: 30px; height: 30px;" loop autoplay>
-                                                        </lottie-player>
-                                                        <%= element.count%>
-                                                    </div>
-                                                    <!-- <%= element.comment %> <br> -->
-                                                    <!-- <p
-                                                        style="text-align: center;font-size: small;">
-                                                    </p> -->
-                                                    Age:
-                                                    <%= date(element.first,element.last) %> Days <br>
-                                                        <!-- <p
-                                                        style="text-align: center;font-size: small;">
-                                                        Age:
-                                                        <%= date(element.first,element.last) %> Days
-                                                    </p> -->
-                                                    <a href="/viewer/<%= element._id %>">View More</a>
-                                                        <a href="<%= element.link %>"> <i style="font-size: 20px;"
-                                                                class="fab fa-youtube"></i> </a>
-                                                </span>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <% } %>
-                            <% }); %>
-
-            </div>
-
-        </div>
         <div class="search">
-            <input type="text" id="search" onchange="search()">
+            <input type="text" id="search" onchange="search()" placeholder="Enter youtube channel name">
         </div>
         <!-- linear-gradient(45deg,rgb(57, 132, 245), rgba(160, 31, 31, 0.315), rgba(131, 73, 73, 0.315), rgb(57, 132, 245)); -->
         <!-- div for more points -->
         <div class="container" style="padding: 30px; text-align: center;min-height:100%;position: relative;width: auto;background:transparent ">
             <div style="display: flex; flex-direction: row-reverse;flex-wrap: wrap;justify-content: space-evenly;gap:2px">
                 <% Object.values(pillars).forEach(element=> {%>
-                    <% if(element.count> 500 && element.name!="Relangi mama" ){ %>
+
+                    <a class="cardlink" href="/viewer/<%= element._id %>">
                         <div class="opp <%= element.name %>">
                             <div class="gradient-box">
                                 <div class="main">
-                                    <div class="stattop" style="height: 100%;padding:10px;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
+                                    <div class="stattop"
+                                        style="height: 100%;padding:10px;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
                                         <div id="stats">
                                             <h5 style="font-weight: 500;">
-                                                <img style="margin-top:10px;border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
+                                                <img style="margin-top:10px;border-radius: 50%;"
+                                                    src="<%= element.image %>" height="30px" width="30px" alt=""><br>
                                                 <span style="font-weight: 600;font-size: 0.7em;">
                                                     <%= element.name%>
                                                 </span>
@@ -137,27 +84,19 @@
                                                 <span style="font-weight: 600;font-size: 0.7em;">
                                                     <div
                                                         style="display: flex;flex-wrap: nowrap;flex-direction: row;justify-content:center;align-items: center;width: auto;gap: 5px  ;">
-                                                        <lottie-player
-                                                            src="https://assets6.lottiefiles.com/packages/lf20_0jburbj5.json"
-                                                            background="transparent" speed="1"
-                                                            style="width: 30px; height: 30px;" loop autoplay>
-                                                        </lottie-player>
-                                                        <%= element.count%>
+                                                        <% if(element.count> 900){ %>
+                                                            <lottie-player
+                                                                src="https://assets6.lottiefiles.com/packages/lf20_0jburbj5.json"
+                                                                background="transparent" speed="1"
+                                                                style="width: 30px; height: 30px;" loop autoplay>
+                                                            </lottie-player>
+                                                            <% } else { %>
+                                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                                <% } %>
+                                                            <%= element.count%>
                                                     </div>
-                                                    <!-- <%= element.comment %> <br> -->
-                                                    <!-- <p
-                                                        style="text-align: center;font-size: small;">
-                                                        
-                                                    </p> -->
                                                     Age:
                                                     <%= date(element.first,element.last) %> Days <br>
-                                                        <!-- <p
-                                                        style="text-align: center;font-size: small;">
-                                                        Age:
-                                                        <%= date(element.first,element.last) %> Days
-                                                    </p> -->
-                                                        <a href="<%= element.link %>"> <i style="font-size: 20px;"
-                                                                class="fab fa-youtube"></i> </a>
                                                 </span>
                                             </h5>
 
@@ -166,41 +105,9 @@
                                 </div>
                             </div>
                         </div>
-                        <% } else if( element.name!="Relangi mama" ){ %>
-                            <div class="opp <%= element.name  %>" style="background: rgb(0, 0, 0);margin:10px;background-size: cover;background-repeat: no-repeat;border-radius: 20px;">
-                                <div class="stattop" style="color:white;border-radius: 20px;border:5px orangered solid;height: 100%;padding:10px;width:100%;position: relative;top:50%;left:50%;transform: translate(-50%,-50%);">
-                                    <div id="stats">
-                                        <img style="border-radius: 50%;" src="<%= element.image %>" height="30px" width="30px" alt=""><br>
-                                        <span style="font-weight: 600; font-size: 0.7em;">
-                                            <%= element.name%>
-                                        </span>
-                                        <br>
-                                        <span style=" font-weight: 600;font-size: 0.7em;">
-                                            <div
-                                                style="margin-top:10px;display: flex;flex-wrap: nowrap;flex-direction: row;justify-content:center;align-items: center;width: auto;gap: 5px  ;">
-                                                <!-- <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ofkqaK.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;"  loop autoplay></lottie-player>  -->
-                                                <i style="color: yellow;" class="fas fa-star"></i>
-                                                <%= element.count%>
-                                            </div>
-                                            <!-- <p
-                                                style="margin-top:2px;overflow: auto;text-align: center;font-size: small;">
-                                                <%= element.comment %>
-                                            </p> -->
-                                            <p
-                                                style="margin-top:5px;overflow: auto;height: auto;width:100%;text-align: center;">
-                                                Age:
-                                                <%= date(element.first,element.last) %> Days
-                                            </p>
-                                        </span>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <% }%>
-                                <% }); %>
-
+                    </a>
+                    <% }); %>
             </div>
-
         </div>
         <footer>
             <p>
@@ -211,8 +118,45 @@
     </body>
 
 </html>
-<script>
-    function date(fisrt, last) {
-        alert(first + " and " + last)
+<style>
+    .follow-btn button {
+        color: inherit;
+        font-size: 13px;
+        font-weight: bold;
+        background-color: #cf0101;
+        color: white;
+        width: auto;
+        border: none;
+        padding: 0.4rem;
+        outline: none;
+        box-sizing: border-box;
+        border-radius: 10%;
+        transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
-</script>
+    
+    .opp {
+        cursor: pointer;
+    }
+    
+    .follow-btn button:hover {
+        background-color: #efb10a;
+        transform: scale(1.1);
+    }
+    
+    .follow-btn button:active {
+        background-color: #e8a200;
+        transform: scale(1);
+    }
+    
+    .cardlink:link {
+        text-decoration: inherit;
+        color: inherit;
+        cursor: auto;
+    }
+    
+    .cardlink:visited {
+        text-decoration: inherit;
+        color: inherit;
+        cursor: auto;
+    }
+</style>

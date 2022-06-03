@@ -53,34 +53,303 @@
                 </div>
             </div>
         </div>
-        <div id="parawindow" style="height: 70px;">
-            <div id="para">
-                <h3 id="Ghead">Pillers of Blazing Bane</h3>
-            </div>
-        </div>
-        <br>
         <% Object.values(viewer).forEach(element=> {%>
-            <p>
-                <%= element.name%>
-            </p>
-            <%})%>
 
-                <!-- LONG RUN VIEWERS -->
+            <div class="wrap">
+                <div class="bg"></div>
+                <div class="container" id="text" style="height: 90vh;padding: 10px;">
+                    <div class="card">
+                        <div class="banner">
+                            <img src="<%= element.image%>" alt=" ">
+                        </div>
+                        <div class="menu">
 
+                        </div>
+                        <h2 class="name ">
+                            <%= element.name%>
+                        </h2>
+                        <div class="actions ">
+                            <div class="follow-info ">
+                                <h2><a href="#"><span> <%= element.count %></span><small>Points</small></a></h2>
+                                <h2><a href="#"><span> <%= date(element.first,element.last) %></span><small>Days</small></a></h2>
+                            </div>
+                            <div class="follow-btn ">
+                                <a href="<%= element.link%>">
+                                    <button>Youtube Link</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="desc ">
+                            <%= element.comment%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%})    %>
 
                 <!-- linear-gradient(45deg,rgb(57, 132, 245), rgba(160, 31, 31, 0.315), rgba(131, 73, 73, 0.315), rgb(57, 132, 245)); -->
 
                 <footer>
                     <p>
-                        with <i style="color:rgb(251, 88, 115)" class="fas fa-heart"></i> Blazing Bane
+                        with <i style="color:rgb(251, 88, 115) " class="fas fa-heart "></i> Blazing Bane
                     </p>
                 </footer>
 
     </body>
 
 </html>
-<script>
-    function date(fisrt, last) {
-        alert(first + " and " + last)
+<style>
+    .wrap {
+        height: 100%;
+        position: relative;
+        overflow: hidden;
     }
+    
+    .wrap .bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: url("https://images.pexels.com/photos/1652353/pexels-photo-1652353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center center;
+        background-size: cover;
+        transform: scale(1.1);
+    }
+</style>
+<script>
+    var lFollowX = 0,
+        lFollowY = 0,
+        x = 0,
+        y = 0,
+        friction = 1 / 30;
+
+    function moveBackground() {
+        x += (lFollowX - x) * friction;
+        y += (lFollowY - y) * friction;
+
+        translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+        $('.bg').css({
+            '-webit-transform': translate,
+            '-moz-transform': translate,
+            'transform': translate
+        });
+
+        window.requestAnimationFrame(moveBackground);
+    }
+
+    $(window).on('mousemove click', function(e) {
+
+        var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+        var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+        lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+        lFollowY = (10 * lMouseY) / 100;
+
+    });
+
+    moveBackground();
 </script>
+<!-- imported style -->
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700 ");
+    body {
+        font-size: 16px;
+        color: #404040;
+        font-family: Montserrat, sans-serif;
+        /* background-image: linear-gradient(to bottom right, #ff9eaa 0% 65%, #e860ff 95% 100%); */
+        background-image: transparent;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        height: 95vh;
+        box-sizing: border-box;
+    }
+    
+    .card {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        max-width: 360px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 2rem;
+        box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.5);
+    }
+    
+    .card .banner {
+        background-image: url("https://images.pexels.com/photos/2774566/pexels-photo-2774566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 11rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    .card .banner img {
+        background-color: #fff;
+        width: 8rem;
+        height: 8rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        border-radius: 50%;
+        transform: translateY(50%);
+        transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    
+    .card .banner img:hover {
+        transform: translateY(50%) scale(1.1);
+    }
+    
+    .card .menu {
+        width: 100%;
+        height: 5.5rem;
+        padding: 1rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        position: relative;
+        box-sizing: border-box;
+    }
+    
+    .card .menu .opener {
+        width: 2.5rem;
+        height: 2.5rem;
+        position: relative;
+        border-radius: 50%;
+        transition: background-color 100ms ease-in-out;
+    }
+    
+    .card .menu .opener:hover {
+        background-color: #f2f2f2;
+    }
+    
+    .card .menu .opener span {
+        background-color: #404040;
+        width: 0.4rem;
+        height: 0.4rem;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 0.2rem);
+        border-radius: 50%;
+    }
+    
+    .card .menu .opener span:nth-child(1) {
+        top: 0.45rem;
+    }
+    
+    .card .menu .opener span:nth-child(2) {
+        top: 1.05rem;
+    }
+    
+    .card .menu .opener span:nth-child(3) {
+        top: 1.65rem;
+    }
+    
+    .card h2.name {
+        text-align: center;
+        padding: 0 2rem 0.5rem;
+        margin: 0;
+    }
+    
+    .card .title {
+        color: #a0a0a0;
+        font-size: 0.85rem;
+        text-align: center;
+        padding: 0 2rem 1.2rem;
+    }
+    
+    .card .actions {
+        padding: 0 2rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        order: 99;
+    }
+    
+    .card .actions .follow-info {
+        padding: 0 0 1rem;
+        display: flex;
+    }
+    
+    .card .actions .follow-info h2 {
+        text-align: center;
+        width: 50%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .card .actions .follow-info h2 a {
+        text-decoration: none;
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.8rem;
+        transition: background-color 100ms ease-in-out;
+    }
+    
+    .card .actions .follow-info h2 a span {
+        color: #1c9eff;
+        font-weight: bold;
+        transform-origin: bottom;
+        transform: scaleY(1.3);
+        transition: color 100ms ease-in-out;
+    }
+    
+    .card .actions .follow-info h2 a small {
+        color: #afafaf;
+        font-size: 0.85rem;
+        font-weight: normal;
+    }
+    
+    .card .actions .follow-info h2 a:hover {
+        background-color: #f2f2f2;
+    }
+    
+    .card .actions .follow-info h2 a:hover span {
+        color: #007ad6;
+    }
+    
+    .card .actions .follow-btn button {
+        color: inherit;
+        font: inherit;
+        font-weight: bold;
+        background-color: #cf0101;
+        color: white;
+        width: 100%;
+        border: none;
+        padding: 1rem;
+        outline: none;
+        box-sizing: border-box;
+        border-radius: 1.5rem/50%;
+        transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+    
+    .card .actions .follow-btn button:hover {
+        background-color: #efb10a;
+        transform: scale(1.1);
+    }
+    
+    .card .actions .follow-btn button:active {
+        background-color: #e8a200;
+        transform: scale(1);
+    }
+    
+    .card .desc {
+        text-align: justify;
+        padding: 0 2rem 2.5rem;
+        order: 100;
+    }
+    
+    @media only screen and (max-device-width: 768px) {
+        .wrap .bg {
+            background: url("https://c.tenor.com/PEDzvMlrdi0AAAAC/fire.gif") no-repeat center center;
+            background-size: cover;
+        }
+    }
+</style>
