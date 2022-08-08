@@ -19,6 +19,7 @@
         "mongodb": "^4.4.1",
         "mongoose": "^6.2.7",
         "node-fetch": "^3.2.3",
+        "nodemon": "^2.0.19",
         "r6api.js": "^4.1.0"
     }
 }

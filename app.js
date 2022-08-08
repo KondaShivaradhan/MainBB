@@ -354,4 +354,4 @@ app.get('/apex', function(req, res) {
 });
 app.listen(process.env.PORT || 5000)
 console.log('====================================');
-console.log('sever started at 5000 for Blazing Bane mega website');
+console.log('sever started at http://localhost:5000 for Blazing Bane mega website');

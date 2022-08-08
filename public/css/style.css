@@ -232,7 +232,8 @@ a:hover {
 
 section {
     color: white;
-    background: black;
+    /* background: transparent; */
+    background: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.644));
     text-align: center;
     width: 100%;
     padding: 30px;
@@ -316,6 +317,12 @@ button:focus {
     }
     #firebb {
         width: 200px;
+    }
+    #backvideo {
+        position: fixed;
+        left: 0;
+        z-index: -1;
+        transform: scaleX(2) scaleY(2.5)!important;
     }
 }
 
