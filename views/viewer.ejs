@@ -60,7 +60,7 @@
                 <div class="container" id="text" style="height: 90vh;padding: 10px;">
                     <div class="card">
                         <div class="banner">
-                            <img src="<%= element.image%>" alt=" ">
+                            <img src="<%= element.image%>" alt="" srcset="">
                         </div>
                         <div class="menu">
 
@@ -72,6 +72,12 @@
                             <div class="follow-info ">
                                 <h2><a href="#"><span> <%= element.count %></span><small>Points</small></a></h2>
                                 <h2><a href="#"><span> <%= date(element.first,element.last) %></span><small>Days</small></a></h2>
+                            </div>
+                            <div>
+                                <p>Date of joining
+                                    <%= element.first %>
+                                </p>
+
                             </div>
                             <div class="follow-btn ">
                                 <a href="<%= element.link%>">
