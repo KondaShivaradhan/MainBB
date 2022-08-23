@@ -82,44 +82,44 @@ app.get('/viewer/:Par', function name(req, res) {
 
 app.get('/pillers', function(req, res) {
     var url = "mongodb://blazing:blazingbane@comments-shard-00-00.9fhsn.mongodb.net:27017,comments-shard-00-01.9fhsn.mongodb.net:27017,comments-shard-00-02.9fhsn.mongodb.net:27017/test?replicaSet=atlas-2rxnym-shard-0&ssl=true&authSource=admin"
-    res.render('test')
-    // MongoClient.connect(url, function(err, db) {
-    //     if (err) throw err;
-    //     var dbo = db.db("youtube");
-    //     dbo.collection("donations").find({}).limit(5).sort("amt", -1).toArray(function(err, result) {
-    //         if (err) throw err;
-    //         array = result
-    //         total = 0
-    //         array.forEach(element => {
-    //             total = element.amt + total
-    //         });
-    //         dbo.collection("donations").find({}).limit(10).sort("time", -1).toArray(function(err, result) {
-    //             function date(date1, date2) {
-    //                 datef = new Date(date1).getTime()
-    //                 datel = new Date(date2).getTime()
-    //                 Difference_In_Time = date2 - date1;
-    //                 Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24)
-    //                 return ((datel - datef) / (1000 * 3600 * 24));
-    //             }
-    //             if (err) throw err;
-    //             arrayT = result
-    //             dbo.collection("live").find({}).sort("count", -1).toArray(function(err, result) {
-    //                 if (err) throw err;
-    //                 pillars = result
-    //                 maxage = 1
-    //                 pillars.forEach(element => {
-    //                     age = date(element.first, element.last)
-    //                     if (maxage < age) {
-    //                         maxage = age
-    //                     }
-    //                 });
-    //                 console.log(maxage);
-    //                 res.render('test', { array, arrayT, pillars, total, maxage })
-    //                 db.close();
-    //             });
-    //         });
-    //     });
-    // });
+    // res.render('test')
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("youtube");
+        dbo.collection("donations").find({}).limit(5).sort("amt", -1).toArray(function(err, result) {
+            if (err) throw err;
+            array = result
+            total = 0
+            array.forEach(element => {
+                total = element.amt + total
+            });
+            dbo.collection("donations").find({}).limit(10).sort("time", -1).toArray(function(err, result) {
+                function date(date1, date2) {
+                    datef = new Date(date1).getTime()
+                    datel = new Date(date2).getTime()
+                    Difference_In_Time = date2 - date1;
+                    Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24)
+                    return ((datel - datef) / (1000 * 3600 * 24));
+                }
+                if (err) throw err;
+                arrayT = result
+                dbo.collection("live").find({}).sort("count", -1).toArray(function(err, result) {
+                    if (err) throw err;
+                    pillars = result
+                    maxage = 1
+                    pillars.forEach(element => {
+                        age = date(element.first, element.last)
+                        if (maxage < age) {
+                            maxage = age
+                        }
+                    });
+                    console.log(maxage);
+                    res.render('pillers', { array, arrayT, pillars, total, maxage })
+                    db.close();
+                });
+            });
+        });
+    });
 });
 
 
